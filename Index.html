@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IndieArc - Global Indie Gaming & Developer Hub</title>
+
+  <!-- Font Awesome Icons & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- PURE CSS TAB SWITCH TRIGGERS -->
+  <input type="radio" id="nav-store" name="main-nav" checked>
+  <input type="radio" id="nav-indie" name="main-nav">
+  <input type="radio" id="nav-assets" name="main-nav">
+  <input type="radio" id="nav-dev" name="main-nav">
+
+  <!-- MODAL TOGGLES -->
+  <input type="checkbox" id="modal-news" class="modal-toggle">
+
+  <!-- HEADER NAVBAR -->
+  <header>
+    <div class="brand">
+      <i class="fa-solid fa-gamepad"></i> INDIE<span>ARC</span>
+    </div>
+
+    <nav class="nav-links">
+      <label for="nav-store" class="nav-btn"><i class="fa-solid fa-newspaper"></i> Toko & Berita Indie</label>
+      <label for="nav-indie" class="nav-btn"><i class="fa-solid fa-calendar-days"></i> Indie & Event Hub</label>
+      <label for="nav-assets" class="nav-btn"><i class="fa-solid fa-boxes-packing"></i> Pasar Aset Game</label>
+      <label for="nav-dev" class="nav-btn"><i class="fa-solid fa-chart-line"></i> Dev Hub & History</label>
+    </nav>
+
+    <div class="user-badge">
+      <span class="status-dot"></span> Developer Mode: <strong>IndieStudio_ID</strong>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main>
+
+    <!-- ================= TAB 1: TOKO, BERITA GLOBAL & DEMO ================= -->
+    <div class="tab-page" id="page-store">
+      
+      <!-- HERO: BERITA GAMING INDIE GLOBAL & SPOTLIGHT DEVELOPER -->
+      <section class="news-hero">
+        <div class="news-hero-content">
+          <span class="badge-news"><i class="fa-solid fa-earth-americas"></i> BERITA UTAMA INDIE GLOBAL</span>
+          <h2>Kisah Dibalik Kesuksesan Solo Developer Pembuat "Hollow Realm"</h2>
+          <p>Bagaimana seorang pengembang dari Indonesia berhasil menembus pasar internasional dan mendapatkan lisensi perilisan global.</p>
+          <div class="news-meta">
+            <span><i class="fa-regular fa-clock"></i> 2 Jam yang lalu</span> • 
+            <span>Oleh Redaksi IndieArc</span>
+          </div>
+          <label for="modal-news" class="btn btn-primary" style="margin-top:1rem;"><i class="fa-solid fa-book-open"></i> Baca Selengkapnya</label>
+        </div>
+      </section>
+
+      <!-- BERITA GAMING GLOBAL DENGAN LINK KELUAR (STEAM / EPIC / ITCH) -->
+      <h3 class="section-title"><i class="fa-solid fa-globe text-cyan"></i> Kabar Game Indie Luar & Link Toko Resmi</h3>
+      <div class="grid-container">
+        
+        <!-- Game Luar (Steam Link) -->
+        <div class="card">
+          <span class="badge-external"><i class="fa-brands fa-steam"></i> Steam Official</span>
+          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&q=80" class="card-img" alt="External Game">
+          <div class="card-body">
+            <span class="card-tag">Berita & Ulasan Game Luar</span>
+            <div class="card-title">Celeste II: Mountain Peak</div>
+            <div class="card-meta">Pengembang mengumumkan DLC terbaru di Steam. Baca liputan resminya.</div>
+            <div class="card-footer">
+              <span class="price-tag">Tersedia di Steam</span>
+              <a href="https://store.steampowered.com" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+                Buka di Steam <i class="fa-solid fa-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Game Luar (Itch.io Link) -->
+        <div class="card">
+          <span class="badge-external"><i class="fa-solid fa-store"></i> Itch.io Official</span>
+          <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&q=80" class="card-img" alt="External Game">
+          <div class="card-body">
+            <span class="card-tag">Rekomendasi Editor</span>
+            <div class="card-title">Pixel Dungeon Crawler</div>
+            <div class="card-meta">Game indie aksi eksperimental buatan developer Swedia.</div>
+            <div class="card-footer">
+              <span class="price-free">Pay What You Want</span>
+              <a href="https://itch.io" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+                Buka di Itch.io <i class="fa-solid fa-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- TOKO GAME RESMI INDIEARC (GAME BUATAN USER / PUBLISHER KITA) -->
+      <h3 class="section-title" style="margin-top: 2.5rem;"><i class="fa-solid fa-cart-shopping text-cyan"></i> Toko Game Resmi IndieArc (Beli Langsung)</h3>
+      <div class="grid-container">
+        
+        <div class="card">
+          <span class="badge-direct"><i class="fa-solid fa-check-circle"></i> Original IndieArc</span>
+          <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=500&q=80" class="card-img" alt="Direct Game">
+          <div class="card-body">
+            <span class="card-tag">Direct Purchase</span>
+            <div class="card-title">Nusantara Quest: Reborn</div>
+            <div class="card-meta">Beli langsung dari developer lokal di IndieArc. Dukung 100% kreatornya.</div>
+            <div class="card-footer">
+              <span class="price-tag">Rp 50.000</span>
+              <button class="btn btn-primary"><i class="fa-solid fa-bag-shopping"></i> Beli di IndieArc</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge-demo">VERSIONS DEMO</span>
+          <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=500&q=80" class="card-img" alt="Demo Game">
+          <div class="card-body">
+            <span class="card-tag">Demo Gratis</span>
+            <div class="card-title">Aetheria Chapter 0 (Trial)</div>
+            <div class="card-meta">Coba gratis sebelum membeli versi lengkapnya bulan depan.</div>
+            <div class="card-footer">
+              <span class="price-free">GRATIS</span>
+              <button class="btn btn-primary"><i class="fa-solid fa-download"></i> Unduh Demo</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================= TAB 2: INDIE & EVENT HUB ================= -->
+    <div class="tab-page" id="page-indie">
+      
+      <!-- EVENT DEVELOPER INTERNAL & EKSTERNAL -->
+      <h3 class="section-title"><i class="fa-solid fa-trophy text-cyan"></i> Agenda Event & Game Jam (Internal & Ekstren)</h3>
+      
+      <div class="event-banner">
+        <div class="event-info">
+          <span class="event-tag"><i class="fa-solid fa-fire"></i> INTERNAL EVENT INDIEARC</span>
+          <h2>IndieArc Annual Game Jam 2026</h2>
+          <p>Tema: "Teknologi & Kehidupan". Hadiah Total Rp 25.000.000 + Fasilitas Mentoring dari Senior Developer.</p>
+        </div>
+        <div class="event-action">
+          <div class="event-timer">Pendaftaran Tutup: 5 Hari Lagi</div>
+          <button class="btn btn-purple"><i class="fa-solid fa-pen-to-square"></i> Ikut Game Jam</button>
+        </div>
+      </div>
+
+      <div class="grid-container release-grid">
+        <div class="release-card">
+          <div class="release-date">EKSTERNAL</div>
+          <div class="release-info">
+            <h4>Global Game Jam 2026</h4>
+            <p>Event Internasional • Online & Offline Hub</p>
+          </div>
+          <a href="https://globalgamejam.org" target="_blank" class="btn btn-secondary btn-sm">Info Event <i class="fa-solid fa-up-right-from-square"></i></a>
+        </div>
+
+        <div class="release-card">
+          <div class="release-date">MEETUP</div>
+          <div class="release-info">
+            <h4>Developer Webinar: Unreal Engine 5</h4>
+            <p>Sesi Sharing Komunitas Game Dev ID</p>
+          </div>
+          <button class="btn btn-secondary btn-sm">Daftar Sesi</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= TAB 3: PASAR ASET GAME ================= -->
+    <div class="tab-page" id="page-assets">
+      
+      <input type="radio" id="asset-all" name="asset-filter" checked>
+      <input type="radio" id="asset-paid" name="asset-filter">
+      <input type="radio" id="asset-donated" name="asset-filter">
+
+      <h3 class="section-title"><i class="fa-solid fa-store text-cyan"></i> Pasar Aset Game (Jual & Sumbangan Komunitas)</h3>
+      <p style="color:var(--text-muted); margin-bottom: 1rem;">Tempat pengembang menjual aset asli buatan mereka atau menyumbangkan aset gratis (CC0 / Open Source).</p>
+
+      <div class="filter-group">
+        <label for="asset-all" class="filter-btn">Semua Aset</label>
+        <label for="asset-paid" class="filter-btn">Aset Berbayar (Commercial)</label>
+        <label for="asset-donated" class="filter-btn">Sumbangan Komunitas (Free / CC0)</label>
+      </div>
+
+      <div class="grid-container">
+        <!-- Aset Berbayar -->
+        <div class="card asset-item type-paid">
+          <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&q=80" class="card-img" alt="Paid Asset">
+          <div class="card-body">
+            <span class="card-tag">Aset Berbayar • @3DPixelArtist</span>
+            <div class="card-title">Cyberpunk City 3D Asset Pack</div>
+            <div class="card-meta">Lengkap dengan tekstur 4K, model FBX, dan prefab Unity/Unreal.</div>
+            <div class="card-footer">
+              <span class="price-tag">Rp 120.000</span>
+              <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i> Beli Aset</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aset Sumbangan Gratis -->
+        <div class="card asset-item type-donated">
+          <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&q=80" class="card-img" alt="Free Asset">
+          <div class="card-body">
+            <span class="card-tag" style="color:var(--accent-green)">Sumbangan Komunitas (CC0)</span>
+            <div class="card-title">8-Bit Sound Effects & Retro BGM</div>
+            <div class="card-meta">Disumbangkan gratis oleh @AudioDev Studio untuk projek indie.</div>
+            <div class="card-footer">
+              <span class="price-free">GRATIS</span>
+              <button class="btn btn-secondary"><i class="fa-solid fa-download"></i> Unduh Aset</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= TAB 4: DEV HUB & ANALYTICS ================= -->
+    <div class="tab-page" id="page-dev">
+      
+      <h3 class="section-title"><i class="fa-solid fa-chart-pie text-cyan"></i> Monitoring Dashboard Developer (Game Anda)</h3>
+      
+      <div class="analytics-overview">
+        <div class="stat-card">
+          <div class="stat-title">Total Pemain Aktif Saat Ini</div>
+          <div class="stat-value text-cyan">1,420 <small>Pemain</small></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-title">Total Game Terjual</div>
+          <div class="stat-value text-green">3,850 <small>Kopi</small></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-title">Total Pendapatan Bersih</div>
+          <div class="stat-value text-purple">Rp 48.250.000</div>
+        </div>
+      </div>
+
+      <h4 class="sub-title">Performa Game Buatan Anda di IndieArc</h4>
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Judul Game</th>
+              <th>Status Listing</th>
+              <th>Harga</th>
+              <th>Pemain Aktif</th>
+              <th>Total Pembeli</th>
+              <th>Pendapatan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Nusantara Quest: Reborn</strong></td>
+              <td><span class="badge-status online">Published</span></td>
+              <td>Rp 50.000</td>
+              <td>920 Orang</td>
+              <td>2,100 Orang</td>
+              <td>Rp 26.250.000</td>
+            </tr>
+            <tr>
+              <td><strong>Pixel Runner 2D</strong></td>
+              <td><span class="badge-status online">Published</span></td>
+              <td>Gratis</td>
+              <td>500 Orang</td>
+              <td>1,750 Unduhan</td>
+              <td>Rp 0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="sub-title" style="margin-top: 2rem;">Aktivitas Pembeli Terbaru Game Anda</h4>
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Pembeli</th>
+              <th>Game/Aset Dibeli</th>
+              <th>Waktu Transaksi</th>
+              <th>Metode Pembayaran</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>GamerSuper99</td>
+              <td>Nusantara Quest: Reborn</td>
+              <td>20 Okt 2026 - 14:20 WIB</td>
+              <td>E-Wallet / QRIS</td>
+            </tr>
+            <tr>
+              <td>IndieLover_21</td>
+              <td>Nusantara Quest: Reborn</td>
+              <td>20 Okt 2026 - 11:05 WIB</td>
+              <td>IndieArc Balance</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- History Pembelian User -->
+      <h3 class="section-title" style="margin-top: 3rem;"><i class="fa-solid fa-receipt text-cyan"></i> History Pembelian Saya</h3>
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>ID Transaksi</th>
+              <th>Item / Game</th>
+              <th>Tanggal Transaksi</th>
+              <th>Harga</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#ARC-99812</td>
+              <td>Cyberpunk City 3D Asset Pack</td>
+              <td>12 Okt 2026</td>
+              <td>Rp 120.000</td>
+              <td><button class="btn btn-secondary btn-sm"><i class="fa-solid fa-download"></i> Unduh File</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- POPUP MODAL READ ARTICLE -->
+  <div class="modal-overlay modal-news-view">
+    <div class="modal-box">
+      <label for="modal-news" class="close-btn">&times;</label>
+      <h3 style="font-family: 'Orbitron'; margin-bottom: 0.8rem;">Kisah Solo Developer Pembuat "Hollow Realm"</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
+        Dimulai dari projek iseng di sela waktu kerja harian, pengembang ini berhasil menyelesaikan game Action-Platformer bergaya pixel art dalam waktu 18 bulan. Melalui dukungan komunitas IndieArc, game ini berhasil meraih pendanaan awal dan lisensi resmi rilis di berbagai platform global.
+      </p>
+      <div style="background: rgba(0, 242, 254, 0.05); padding: 1rem; border-radius: 8px; border: 1px solid var(--border); font-size: 0.85rem;">
+        <strong>Pesan Utama Developer:</strong> "Jangan takut memulai dari hal kecil. Manfaatkan forum indie dan event Game Jam untuk menguji prototipe game kamu!"
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
