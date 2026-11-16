@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IndieArc - Global Indie Gaming & Developer Hub</title>
+  
+  <!-- Font Awesome Icons & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- PURE CSS TAB SWITCH TRIGGERS -->
+  <input type="radio" id="nav-store" name="main-nav">
+  <input type="radio" id="nav-indie" name="main-nav">
+  <input type="radio" id="nav-assets" name="main-nav">
+  <input type="radio" id="nav-dev" name="main-nav" checked>
+
+  <!-- HEADER NAVBAR -->
+  <header>
+    <div class="brand">
+      <i class="fa-solid fa-gamepad"></i> INDIE<span>ARC</span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="Index.html" class="nav-btn"><i class="fa-solid fa-newspaper"></i> Toko & Berita Global</a>
+      <a href="indie.html" class="nav-btn"><i class="fa-solid fa-calendar-days"></i> Indie & Event Hub</a>
+      <a href="assets.html" class="nav-btn"><i class="fa-solid fa-boxes-packing"></i> Pasar Aset Game</a>
+      <a href="dev.html" class="nav-btn"><i class="fa-solid fa-chart-line"></i> Dev Hub & History</a>
+    </nav>
+
+    <div class="user-badge">
+      <span class="status-dot"></span> Developer Mode: <strong>IndieStudio_ID</strong>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main>
+
+    <!-- ================= TAB 4: DEV HUB & ANALYTICS ================= -->
+    <div class="tab-page" id="page-dev">
+      
+      <h3 class="section-title"><i class="fa-solid fa-chart-pie text-cyan"></i> Monitoring Dashboard Developer (Game Anda)</h3>
+      
+      <div class="analytics-overview">
+        <div class="stat-card">
+          <div class="stat-title">Total Pemain Aktif Saat Ini</div>
+          <div class="stat-value text-cyan">1,420 <small>Pemain</small></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-title">Total Game Terjual</div>
+          <div class="stat-value text-green">3,850 <small>Kopi</small></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-title">Total Pendapatan Bersih</div>
+          <div class="stat-value text-purple">Rp 48.250.000</div>
+        </div>
+      </div>
+
+      <h4 class="sub-title">Performa Game Buatan Anda di IndieArc</h4>
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Judul Game</th>
+              <th>Status Listing</th>
+              <th>Harga</th>
+              <th>Pemain Aktif</th>
+              <th>Total Pembeli</th>
+              <th>Pendapatan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Nusantara Quest: Reborn</strong></td>
+              <td><span class="badge-status online">Published</span></td>
+              <td>Rp 50.000</td>
+              <td>920 Orang</td>
+              <td>2,100 Orang</td>
+              <td>Rp 26.250.000</td>
+            </tr>
+            <tr>
+              <td><strong>Pixel Runner 2D</strong></td>
+              <td><span class="badge-status online">Published</span></td>
+              <td>Gratis</td>
+              <td>500 Orang</td>
+              <td>1,750 Unduhan</td>
+              <td>Rp 0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="sub-title" style="margin-top: 2rem;">Aktivitas Pembeli Terbaru Game Anda</h4>
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Pembeli</th>
+              <th>Game/Aset Dibeli</th>
+              <th>Waktu Transaksi</th>
+              <th>Metode Pembayaran</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>GamerSuper99</td>
+              <td>Nusantara Quest: Reborn</td>
+              <td>20 Okt 2026 - 14:20 WIB</td>
+              <td>E-Wallet / QRIS</td>
+            </tr>
+            <tr>
+              <td>IndieLover_21</td>
+              <td>Nusantara Quest: Reborn</td>
+              <td>20 Okt 2026 - 11:05 WIB</td>
+              <td>IndieArc Balance</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- History Pembelian User -->
+      <h3 class="section-title" style="margin-top: 3rem;"><i class="fa-solid fa-receipt text-cyan"></i> History Pembelian Saya</h3>
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>ID Transaksi</th>
+              <th>Item / Game</th>
+              <th>Tanggal Transaksi</th>
+              <th>Harga</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#ARC-99812</td>
+              <td>Cyberpunk City 3D Asset Pack</td>
+              <td>12 Okt 2026</td>
+              <td>Rp 120.000</td>
+              <td><button class="btn btn-secondary btn-sm"><i class="fa-solid fa-download"></i> Unduh File</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IndieArc - Global Indie Gaming & Developer Hub</title>
+  
+  <!-- Font Awesome Icons & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- PURE CSS TAB SWITCH TRIGGERS -->
+  <input type="radio" id="nav-store" name="main-nav">
+  <input type="radio" id="nav-indie" name="main-nav" checked>
+  <input type="radio" id="nav-assets" name="main-nav">
+  <input type="radio" id="nav-dev" name="main-nav">
+
+  <!-- HEADER NAVBAR -->
+  <header>
+    <div class="brand">
+      <i class="fa-solid fa-gamepad"></i> INDIE<span>ARC</span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="Index.html" class="nav-btn"><i class="fa-solid fa-newspaper"></i> Toko & Berita Global</a>
+      <a href="indie.html" class="nav-btn"><i class="fa-solid fa-calendar-days"></i> Indie & Event Hub</a>
+      <a href="assets.html" class="nav-btn"><i class="fa-solid fa-boxes-packing"></i> Pasar Aset Game</a>
+      <a href="dev.html" class="nav-btn"><i class="fa-solid fa-chart-line"></i> Dev Hub & History</a>
+    </nav>
+
+    <div class="user-badge">
+      <span class="status-dot"></span> Developer Mode: <strong>IndieStudio_ID</strong>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main>
+
+    <!-- ================= TAB 2: INDIE & EVENT HUB ================= -->
+    <div class="tab-page" id="page-indie">
+      
+      <!-- EVENT DEVELOPER INTERNAL & EKSTERNAL -->
+      <h3 class="section-title"><i class="fa-solid fa-trophy text-cyan"></i> Agenda Event & Game Jam (Internal & Ekstren)</h3>
+      
+      <div class="event-banner">
+        <div class="event-info">
+          <span class="event-tag"><i class="fa-solid fa-fire"></i> INTERNAL EVENT INDIEARC</span>
+          <h2>IndieArc Annual Game Jam 2026</h2>
+          <p>Tema: "Teknologi & Kehidupan". Hadiah Total Rp 25.000.000 + Fasilitas Mentoring dari Senior Developer.</p>
+        </div>
+        <div class="event-action">
+          <div class="event-timer">Pendaftaran Tutup: 5 Hari Lagi</div>
+          <button class="btn btn-purple"><i class="fa-solid fa-pen-to-square"></i> Ikut Game Jam</button>
+        </div>
+      </div>
+
+      <div class="grid-container release-grid">
+        <div class="release-card">
+          <div class="release-date">EKSTERNAL</div>
+          <div class="release-info">
+            <h4>Global Game Jam 2026</h4>
+            <p>Event Internasional • Online & Offline Hub</p>
+          </div>
+          <a href="https://globalgamejam.org" target="_blank" class="btn btn-secondary btn-sm">Info Event <i class="fa-solid fa-up-right-from-square"></i></a>
+        </div>
+
+        <div class="release-card">
+          <div class="release-date">MEETUP</div>
+          <div class="release-info">
+            <h4>Developer Webinar: Unreal Engine 5</h4>
+            <p>Sesi Sharing Komunitas Game Dev ID</p>
+          </div>
+          <button class="btn btn-secondary btn-sm">Daftar Sesi</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>

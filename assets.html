@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IndieArc - Global Indie Gaming & Developer Hub</title>
+  
+  <!-- Font Awesome Icons & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- PURE CSS TAB SWITCH TRIGGERS -->
+  <input type="radio" id="nav-store" name="main-nav">
+  <input type="radio" id="nav-indie" name="main-nav">
+  <input type="radio" id="nav-assets" name="main-nav" checked>
+  <input type="radio" id="nav-dev" name="main-nav">
+
+  <!-- HEADER NAVBAR -->
+  <header>
+    <div class="brand">
+      <i class="fa-solid fa-gamepad"></i> INDIE<span>ARC</span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="Index.html" class="nav-btn"><i class="fa-solid fa-newspaper"></i> Toko & Berita Global</a>
+      <a href="indie.html" class="nav-btn"><i class="fa-solid fa-calendar-days"></i> Indie & Event Hub</a>
+      <a href="assets.html" class="nav-btn"><i class="fa-solid fa-boxes-packing"></i> Pasar Aset Game</a>
+      <a href="dev.html" class="nav-btn"><i class="fa-solid fa-chart-line"></i> Dev Hub & History</a>
+    </nav>
+
+    <div class="user-badge">
+      <span class="status-dot"></span> Developer Mode: <strong>IndieStudio_ID</strong>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main>
+
+    <!-- ================= TAB 3: PASAR ASET GAME ================= -->
+    <div class="tab-page" id="page-assets">
+      
+      <input type="radio" id="asset-all" name="asset-filter" checked>
+      <input type="radio" id="asset-paid" name="asset-filter">
+      <input type="radio" id="asset-donated" name="asset-filter">
+
+      <h3 class="section-title"><i class="fa-solid fa-store text-cyan"></i> Pasar Aset Game (Jual & Sumbangan Komunitas)</h3>
+      <p style="color:var(--text-muted); margin-bottom: 1rem;">Tempat pengembang menjual aset asli buatan mereka atau menyumbangkan aset gratis (CC0 / Open Source).</p>
+
+      <div class="filter-group">
+        <label for="asset-all" class="filter-btn">Semua Aset</label>
+        <label for="asset-paid" class="filter-btn">Aset Berbayar (Commercial)</label>
+        <label for="asset-donated" class="filter-btn">Sumbangan Komunitas (Free / CC0)</label>
+      </div>
+
+      <!-- MOCK UPLOAD SECTION -->
+<div class="card upload-card">
+  <div class="card-body">
+    <div class="section-title">
+      <i class="fa-solid fa-cloud-arrow-up text-cyan"></i> Unggah Aset / Game Baru
+      <span class="badge-demo" style="position: static; margin-left: auto;">CONCEPT UI</span>
+    </div>
+
+    <!-- Drag & Drop Zone -->
+    <div class="upload-drop-zone" id="dropZone">
+      <i class="fa-solid fa-folder-open upload-icon"></i>
+      <h4>Tarik & Lepas File Di Sini</h4>
+      <p>Mendukung format <code>.zip</code>, <code>.rar</code>, <code>.exe</code>, atau <code>.fbx</code> (Maks. 500 MB)</p>
+      <label for="mockFileInput" class="btn btn-secondary btn-sm" style="margin-top: 0.8rem; cursor: pointer;">
+        <i class="fa-solid fa-file-import"></i> Pilih File Dari Komputer
+      </label>
+      <input type="file" id="mockFileInput" hidden>
+    </div>
+
+    <!-- File Meta Inputs (Mock Form) -->
+    <div class="upload-form-grid">
+      <div class="form-group">
+        <label class="form-label">Judul Game / Aset</label>
+        <input type="text" class="form-control" placeholder="Contoh: Cyberpunk Weapons Pack">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Kategori</label>
+        <select class="form-control">
+          <option>Aset 3D / FBX</option>
+          <option>Audio / BGM 8-Bit</option>
+          <option>Game Build (Executable)</option>
+          <option>Demo / Trial Version</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Simulated Progress Bar (Initially Hidden) -->
+    <div class="upload-progress-wrapper" id="progressWrapper" style="display: none;">
+      <div class="progress-info">
+        <span id="fileNameDisplay"><i class="fa-solid fa-paperclip"></i> sample_project.zip</span>
+        <span id="progressPercent" class="text-cyan">0%</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="progressBarFill"></div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="upload-actions">
+      <button class="btn btn-primary" id="mockUploadBtn" type="button">
+        <i class="fa-solid fa-upload"></i> Mulai Unggah (Simulasi)
+      </button>
+    </div>
+  </div>
+</div>
+
+      <div class="grid-container">
+        <!-- Aset Berbayar -->
+        <div class="card asset-item type-paid">
+          <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&q=80" class="card-img" alt="Paid Asset">
+          <div class="card-body">
+            <span class="card-tag">Aset Berbayar • @3DPixelArtist</span>
+            <div class="card-title">Cyberpunk City 3D Asset Pack</div>
+            <div class="card-meta">Lengkap dengan tekstur 4K, model FBX, dan prefab Unity/Unreal.</div>
+            <div class="card-footer">
+              <span class="price-tag">Rp 120.000</span>
+              <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i> Beli Aset</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aset Sumbangan Gratis -->
+        <div class="card asset-item type-donated">
+          <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&q=80" class="card-img" alt="Free Asset">
+          <div class="card-body">
+            <span class="card-tag" style="color:var(--accent-green)">Sumbangan Komunitas (CC0)</span>
+            <div class="card-title">8-Bit Sound Effects & Retro BGM</div>
+            <div class="card-meta">Disumbangkan gratis oleh @AudioDev Studio untuk projek indie.</div>
+            <div class="card-footer">
+              <span class="price-free">GRATIS</span>
+              <button class="btn btn-secondary"><i class="fa-solid fa-download"></i> Unduh Aset</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+<script>
+  const mockBtn = document.getElementById('mockUploadBtn');
+  const fileInput = document.getElementById('mockFileInput');
+  const progressWrapper = document.getElementById('progressWrapper');
+  const progressBarFill = document.getElementById('progressBarFill');
+  const progressPercent = document.getElementById('progressPercent');
+  const fileNameDisplay = document.getElementById('fileNameDisplay');
+
+  // Update mock file name on file select
+  fileInput.addEventListener('change', (e) => {
+    if (e.target.files.length > 0) {
+      fileNameDisplay.innerHTML = `<i class="fa-solid fa-paperclip"></i> ${e.target.files[0].name}`;
+    }
+  });
+
+  // Simulated upload loop
+  mockBtn.addEventListener('click', () => {
+    progressWrapper.style.display = 'block';
+    mockBtn.disabled = true;
+    let progress = 0;
+
+    const interval = setInterval(() => {
+      progress += Math.floor(Math.random() * 15) + 5;
+      if (progress >= 100) {
+        progress = 100;
+        clearInterval(interval);
+        setTimeout(() => {
+          alert('Demo Mode: File simulated upload complete! (Static preview)');
+          progressWrapper.style.display = 'none';
+          progressBarFill.style.width = '0%';
+          progressPercent.textContent = '0%';
+          mockBtn.disabled = false;
+        }, 400);
+      }
+      progressBarFill.style.width = progress + '%';
+      progressPercent.textContent = progress + '%';
+    }, 150);
+  });
+</script>
+</body>
+</html>

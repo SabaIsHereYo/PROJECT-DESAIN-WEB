@@ -45,10 +45,10 @@ input[type="radio"][name="main-nav"] { display: none; }
 #nav-assets:checked ~ main #page-assets { display: block; }
 #nav-dev:checked ~ main #page-dev { display: block; }
 
-#nav-store:checked ~ header label[for="nav-store"],
-#nav-indie:checked ~ header label[for="nav-indie"],
-#nav-assets:checked ~ header label[for="nav-assets"],
-#nav-dev:checked ~ header label[for="nav-dev"] {
+#nav-store:checked ~ header a[href="Index.html"],
+#nav-indie:checked ~ header a[href="indie.html"],
+#nav-assets:checked ~ header a[href="assets.html"],
+#nav-dev:checked ~ header a[href="dev.html"] {
   color: var(--accent-cyan);
   border-bottom: 2px solid var(--accent-cyan);
   background: rgba(255, 255, 255, 0.05);
@@ -100,6 +100,7 @@ header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  text-decoration: none;
 }
 
 .nav-btn:hover { color: var(--text-main); }
@@ -458,3 +459,108 @@ input[type="radio"][name="asset-filter"] { display: none; }
 .btn-primary { background: var(--accent-cyan); color: #000; }
 .btn-secondary { background: rgba(255, 255, 255, 0.1); }
 .btn-purple { background: var(--accent-purple); }
+
+/* ==========================================
+   9. STATIC MOCK UPLOAD UI
+   ========================================== */
+.upload-card {
+  border: 1px dashed var(--accent-cyan);
+  background: var(--bg-card);
+  margin-bottom: 2rem;
+}
+
+.upload-drop-zone {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+.upload-drop-zone:hover {
+  border-color: var(--accent-cyan);
+  background: rgba(0, 242, 254, 0.03);
+}
+
+.upload-icon {
+  font-size: 2.5rem;
+  color: var(--accent-cyan);
+  margin-bottom: 0.8rem;
+}
+
+.upload-drop-zone h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.upload-drop-zone p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.upload-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.form-control {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.form-control:focus {
+  border-color: var(--accent-cyan);
+}
+
+.upload-progress-wrapper {
+  margin-bottom: 1.2rem;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+  transition: width 0.1s linear;
+}
+
+.upload-actions {
+  display: flex;
+  justify-content: flex-end;
+}
