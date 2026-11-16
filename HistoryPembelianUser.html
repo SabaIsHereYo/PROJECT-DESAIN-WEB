@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History Pembelian - IndieArc</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+  <header class="kepala-web">
+    <div class="wadah baris-nav">
+      <a href="Index.html" class="logo">Indie<span>Arc</span></a>
+      <button class="tombol-menu" id="btnMenu" aria-label="Buka Menu">&#9776;</button>
+      <nav class="menu-nav" id="menuNav">
+        <a href="Index.html">Berita & Beranda</a>
+        <a href="TokoGame.html">Toko Game</a>
+        <a href="Event.html">Event & Jam</a>
+        <a href="PasarAset.html">Pasar Aset</a>
+        <a href="DevHub.html">Dev Hub</a>
+        <a href="HistoryPembelianUser.html" class="aktif">History</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wadah">
+    <section class="bagian">
+      <div class="baris-judul-history">
+        <div class="judul-bagian">
+          <h1>History Pembelian & Koleksi Saya</h1>
+          <p>Semua game dan aset yang pernah kamu beli atau klaim tersimpan di sini.</p>
+        </div>
+        <button class="tombol tombol-sekunder" id="btnResetHistory">Reset Transaksi Baru</button>
+      </div>
+
+      <div class="tabel-wrap">
+        <table class="tabel-data">
+          <thead>
+            <tr>
+              <th>ID Transaksi</th>
+              <th>Nama Item</th>
+              <th>Kategori</th>
+              <th>Tanggal</th>
+              <th>Nominal</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="tabelHistory">
+            <!-- data bawaan + data baru dari localStorage akan muncul di sini -->
+            <tr>
+              <td>#ARC-1024</td>
+              <td><strong>Paket Bangunan Kota Low-Poly</strong></td>
+              <td>Aset 3D</td>
+              <td>10 Nov 2026</td>
+              <td>Rp 95.000</td>
+              <td><button class="tombol tombol-sekunder" onclick="alert('Mengunduh file Paket_Kota_LowPoly.zip...')">Unduh</button></td>
+            </tr>
+            <tr>
+              <td>#ARC-1019</td>
+              <td><strong>Simulasi Warung Kopi Malam</strong></td>
+              <td>Game</td>
+              <td>02 Nov 2026</td>
+              <td>Rp 35.000</td>
+              <td><button class="tombol tombol-utama" onclick="alert('Menjalankan launcher untuk Simulasi Warung Kopi Malam...')">Mainkan</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="kaki-web">
+    <div class="wadah">
+      <p>&copy; 2026 IndieArc - Tugas Proyek Desain Web.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

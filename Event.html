@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event & Game Jam - IndieArc</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+  <header class="kepala-web">
+    <div class="wadah baris-nav">
+      <a href="Index.html" class="logo">Indie<span>Arc</span></a>
+      <button class="tombol-menu" id="btnMenu" aria-label="Buka Menu">&#9776;</button>
+      <nav class="menu-nav" id="menuNav">
+        <a href="Index.html">Berita & Beranda</a>
+        <a href="TokoGame.html">Toko Game</a>
+        <a href="Event.html" class="aktif">Event & Jam</a>
+        <a href="PasarAset.html">Pasar Aset</a>
+        <a href="DevHub.html">Dev Hub</a>
+        <a href="HistoryPembelianUser.html">History</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wadah">
+    <!-- banner event utama -->
+    <section class="banner-event">
+      <div>
+        <span class="label-kategori">Kompetisi Internal</span>
+        <h1>IndieArc Game Jam #12</h1>
+        <p>Buat game dalam waktu 72 jam dengan tema "Batas Waktu". Terbuka untuk solo developer maupun tim maksimal 4 orang.</p>
+        <p class="teks-kecil">Total Hadiah: Rp 15.000.000 &bull; Pendaftaran ditutup <time datetime="2026-11-25">25 November 2026</time></p>
+      </div>
+      <button class="tombol tombol-utama" onclick="daftarEvent('IndieArc Game Jam #12')">Daftar Sekarang</button>
+    </section>
+
+    <!-- daftar jadwal event dan rilis -->
+    <section class="bagian">
+      <div class="judul-bagian">
+        <h2>Jadwal Event Komunitas & Perilisan Game</h2>
+        <p>Agenda workshop developer, jam eksternal, serta tanggal rilis game mendatang.</p>
+      </div>
+
+      <div class="daftar-jadwal">
+        <article class="baris-jadwal">
+          <time class="kotak-tanggal" datetime="2026-11-28">28 NOV</time>
+          <div class="detail-jadwal">
+            <h3>Workshop Optimasi Asset 2D di Godot Engine</h3>
+            <p>Sesi daring gratis bersama komunitas Game Dev Indonesia pukul 19.30 WIB.</p>
+          </div>
+          <button class="tombol tombol-sekunder" onclick="daftarEvent('Workshop Godot Engine')">Ikut Sesi</button>
+        </article>
+
+        <article class="baris-jadwal">
+          <time class="kotak-tanggal" datetime="2026-12-05">05 DES</time>
+          <div class="detail-jadwal">
+            <h3>Perilisan Penuh: Aetheria Chronicles</h3>
+            <p>Karya Studio Nusantara resmi meluncur di Toko IndieArc dan Steam.</p>
+          </div>
+          <button class="tombol tombol-sekunder" onclick="alert('Pengingat rilis Aetheria Chronicles berhasil disimpan!')">Ingatkan Saya</button>
+        </article>
+
+        <article class="baris-jadwal">
+          <time class="kotak-tanggal" datetime="2027-01-20">20 JAN</time>
+          <div class="detail-jadwal">
+            <h3>Global Game Jam 2027 (Situs Eksternal)</h3>
+            <p>Ajang pembuatan game serentak seluruh dunia selama akhir pekan.</p>
+          </div>
+          <a href="https://globalgamejam.org" target="_blank" rel="noopener" class="tombol tombol-sekunder">Web Resmi</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="kaki-web">
+    <div class="wadah">
+      <p>&copy; 2026 IndieArc - Tugas Proyek Desain Web.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

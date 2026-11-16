@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dev Hub - IndieArc</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+  <header class="kepala-web">
+    <div class="wadah baris-nav">
+      <a href="Index.html" class="logo">Indie<span>Arc</span></a>
+      <button class="tombol-menu" id="btnMenu" aria-label="Buka Menu">&#9776;</button>
+      <nav class="menu-nav" id="menuNav">
+        <a href="Index.html">Berita & Beranda</a>
+        <a href="TokoGame.html">Toko Game</a>
+        <a href="Event.html">Event & Jam</a>
+        <a href="PasarAset.html">Pasar Aset</a>
+        <a href="DevHub.html" class="aktif">Dev Hub</a>
+        <a href="HistoryPembelianUser.html">History</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wadah">
+    <section class="bagian">
+      <div class="judul-bagian">
+        <h1>Dashboard Developer (IndieStudio_ID)</h1>
+        <p>Pantau jumlah pemain aktif, total penjualan, dan aktivitas pembeli game buatanmu.</p>
+      </div>
+
+      <!-- ringkasan statistik -->
+      <div class="grid-statistik">
+        <article class="kartu-stat">
+          <span class="label-stat">Pemain Aktif Hari Ini</span>
+          <strong class="angka-stat">1.420 Pemain</strong>
+        </article>
+        <article class="kartu-stat">
+          <span class="label-stat">Total Game Terjual</span>
+          <strong class="angka-stat">3.850 Kopi</strong>
+        </article>
+        <article class="kartu-stat">
+          <span class="label-stat">Pendapatan Bersih</span>
+          <strong class="angka-stat teks-hijau">Rp 48.250.000</strong>
+        </article>
+      </div>
+
+      <!-- tabel game buatan developer -->
+      <h2 class="sub-judul">Daftar Game Buatan Anda</h2>
+      <div class="tabel-wrap">
+        <table class="tabel-data">
+          <thead>
+            <tr>
+              <th>Judul Game</th>
+              <th>Status</th>
+              <th>Harga</th>
+              <th>Pemain Aktif</th>
+              <th>Total Pembeli / Unduhan</th>
+              <th>Pendapatan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Nusantara Quest: Reborn</strong></td>
+              <td><span class="badge-aktif">Tayang</span></td>
+              <td>Rp 50.000</td>
+              <td>920 orang</td>
+              <td>2.100 pembeli</td>
+              <td>Rp 48.250.000</td>
+            </tr>
+            <tr>
+              <td><strong>Pixel Runner 2D</strong></td>
+              <td><span class="badge-aktif">Tayang</span></td>
+              <td>Gratis</td>
+              <td>500 orang</td>
+              <td>1.750 unduhan</td>
+              <td>Rp 0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- tabel log pembeli terbaru -->
+      <h2 class="sub-judul">Aktivitas Pembeli & Pemain Terbaru</h2>
+      <div class="tabel-wrap">
+        <table class="tabel-data">
+          <thead>
+            <tr>
+              <th>Username Pembeli</th>
+              <th>Game yang Dibeli</th>
+              <th>Waktu</th>
+              <th>Status Bermain</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>GamerSantai99</td>
+              <td>Nusantara Quest: Reborn</td>
+              <td>16 Nov 2026, 18:40 WIB</td>
+              <td>Sedang Online</td>
+            </tr>
+            <tr>
+              <td>Dika_Pratama</td>
+              <td>Nusantara Quest: Reborn</td>
+              <td>16 Nov 2026, 17:15 WIB</td>
+              <td>Offline (Main 4 jam)</td>
+            </tr>
+            <tr>
+              <td>NadiaKurnia</td>
+              <td>Pixel Runner 2D</td>
+              <td>16 Nov 2026, 15:02 WIB</td>
+              <td>Sedang Online</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="kaki-web">
+    <div class="wadah">
+      <p>&copy; 2026 IndieArc - Tugas Proyek Desain Web.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

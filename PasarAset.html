@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pasar Aset Game - IndieArc</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+  <header class="kepala-web">
+    <div class="wadah baris-nav">
+      <a href="Index.html" class="logo">Indie<span>Arc</span></a>
+      <button class="tombol-menu" id="btnMenu" aria-label="Buka Menu">&#9776;</button>
+      <nav class="menu-nav" id="menuNav">
+        <a href="Index.html">Berita & Beranda</a>
+        <a href="TokoGame.html">Toko Game</a>
+        <a href="Event.html">Event & Jam</a>
+        <a href="PasarAset.html" class="aktif">Pasar Aset</a>
+        <a href="DevHub.html">Dev Hub</a>
+        <a href="HistoryPembelianUser.html">History</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wadah">
+    <section class="bagian">
+      <div class="judul-bagian">
+        <h1>Pasar Aset Developer</h1>
+        <p>Beli aset siap pakai buatan kreator atau unduh aset sumbangan gratis berlisensi CC0.</p>
+      </div>
+
+      <!-- filter aset -->
+      <div class="baris-filter" id="filterAset">
+        <button class="tombol-filter aktif" data-kategori="semua">Semua Aset</button>
+        <button class="tombol-filter" data-kategori="berbayar">Komersial (Berbayar)</button>
+        <button class="tombol-filter" data-kategori="gratis">Sumbangan Gratis (CC0)</button>
+      </div>
+
+      <div class="grid-kartu">
+        <article class="kartu item-filter" data-kategori="berbayar">
+          <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80" alt="Aset 3D">
+          <div class="isi-kartu">
+            <span class="tag-platform">Model 3D &bull; @3DPixelArtist</span>
+            <h3>Paket Bangunan Kota Low-Poly</h3>
+            <p>Berisi 45 objek gedung, jalan, dan lampu format FBX dan OBJ siap pakai.</p>
+            <div class="bawah-kartu">
+              <span class="harga">Rp 95.000</span>
+              <button class="tombol tombol-utama" onclick="beliItem('Paket Bangunan Kota Low-Poly', 'Aset 3D', 'Rp 95.000')">Beli Aset</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="kartu item-filter" data-kategori="gratis">
+          <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=600&q=80" alt="Aset Audio">
+          <div class="isi-kartu">
+            <span class="tag-platform tag-gratis">Lisensi CC0 &bull; @AudioDev</span>
+            <h3>60 Efek Suara Retro 8-Bit</h3>
+            <p>Sumbangan komunitas berisi efek lompat, koin, ledakan, dan menu format WAV.</p>
+            <div class="bawah-kartu">
+              <span class="harga gratis">Gratis</span>
+              <button class="tombol tombol-sekunder" onclick="unduhItem('60 Efek Suara Retro 8-Bit', 'Aset Audio CC0')">Unduh ZIP</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="kartu item-filter" data-kategori="berbayar">
+          <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80" alt="UI Kit">
+          <div class="isi-kartu">
+            <span class="tag-platform">UI Kit 2D &bull; @RakaUI</span>
+            <h3>Antarmuka RPG Fantasi Gelap</h3>
+            <p>Ikon inventori, bar darah, tombol, dan bingkai dialog resolusi tinggi (PNG/SVG).</p>
+            <div class="bawah-kartu">
+              <span class="harga">Rp 60.000</span>
+              <button class="tombol tombol-utama" onclick="beliItem('Antarmuka RPG Fantasi Gelap', 'Aset UI', 'Rp 60.000')">Beli Aset</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="kartu item-filter" data-kategori="gratis">
+          <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=600&q=80" alt="Tileset">
+          <div class="isi-kartu">
+            <span class="tag-platform tag-gratis">Lisensi CC0 &bull; @PixelNusa</span>
+            <h3>Tileset Hutan & Gua 16x16</h3>
+            <p>Aset sumbangan terbuka untuk game platformer 2D lengkap dengan animasi karakter.</p>
+            <div class="bawah-kartu">
+              <span class="harga gratis">Gratis</span>
+              <button class="tombol tombol-sekunder" onclick="unduhItem('Tileset Hutan & Gua 16x16', 'Aset 2D CC0')">Unduh ZIP</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="kaki-web">
+    <div class="wadah">
+      <p>&copy; 2026 IndieArc - Tugas Proyek Desain Web.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
