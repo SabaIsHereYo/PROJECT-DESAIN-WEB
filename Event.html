@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Event & Game Jam - IndieArc</title>
+  <title>Event &amp; Game Jam - IndieArc</title>
   <link rel="stylesheet" href="Style.css">
 </head>
 <body>
@@ -21,7 +21,7 @@
         <a href="HistoryPembelianUser.html">History</a>
       </nav>
       <div class="area-akun">
-        <button class="badge-pov" id="btnGantiPov" title="Klik untuk ganti POV">POV: User</button>
+        <button class="badge-mode" id="btnMode" title="Status Akun">Belum Login</button>
         <a href="Login.html" class="tombol tombol-kecil tombol-sekunder" id="linkAuth">Login</a>
       </div>
     </div>
@@ -30,18 +30,18 @@
   <main class="wadah">
     <section class="banner-event">
       <div>
-        <span class="label-kategori">Kompetisi Internal</span>
+        <span class="label-kategori">Game Jam</span>
         <h1>IndieArc Game Jam #12</h1>
-        <p>Buat game dalam waktu 72 jam dengan tema "Batas Waktu". Terbuka untuk solo developer maupun tim maksimal 4 orang.</p>
-        <p class="teks-kecil">Total Hadiah: Rp 15.000.000 &bull; Pendaftaran ditutup <time datetime="2026-11-25">25 November 2026</time></p>
+        <p>Buat game dalam waktu 72 jam dengan tema "Batas Waktu". Terbuka untuk solo maupun tim maksimal 4 orang.</p>
+        <p class="teks-kecil">Total Hadiah: Rp 15.000.000 &bull; Tutup pendaftaran <time datetime="2026-11-25">25 November 2026</time></p>
       </div>
       <button class="tombol tombol-utama" onclick="daftarEvent(this, 'IndieArc Game Jam #12')">Daftar Sekarang</button>
     </section>
 
     <section class="bagian">
       <div class="judul-bagian">
-        <h2>Jadwal Event Komunitas &amp; Perilisan Game</h2>
-        <p>Agenda workshop developer, jam eksternal, serta tanggal rilis game mendatang.</p>
+        <h2>Jadwal Event &amp; Rilis Game</h2>
+        <p>Agenda workshop komunitas, game jam, dan tanggal rilis mendatang.</p>
       </div>
 
       <div class="daftar-jadwal">
@@ -49,7 +49,7 @@
           <time class="kotak-tanggal" datetime="2026-11-28">28 NOV</time>
           <div class="detail-jadwal">
             <h3>Workshop Optimasi Asset 2D di Godot Engine</h3>
-            <p>Sesi daring gratis bersama komunitas Game Dev Indonesia pukul 19.30 WIB.</p>
+            <p>Sesi online gratis bersama komunitas Game Dev Indonesia pukul 19.30 WIB.</p>
           </div>
           <button class="tombol tombol-sekunder" onclick="daftarEvent(this, 'Workshop Godot Engine')">Ikut Sesi</button>
         </article>
@@ -57,8 +57,8 @@
         <article class="baris-jadwal">
           <time class="kotak-tanggal" datetime="2026-12-05">05 DES</time>
           <div class="detail-jadwal">
-            <h3>Perilisan Penuh: Aetheria Chronicles</h3>
-            <p>Karya Studio Nusantara resmi meluncur di Toko IndieArc dan Steam.</p>
+            <h3>Rilis Penuh: Aetheria Chronicles</h3>
+            <p>Karya Studio Nusantara resmi meluncur di IndieArc dan Steam.</p>
           </div>
           <button class="tombol tombol-sekunder" onclick="aktifkanPengingat(this, 'Aetheria Chronicles')">Ingatkan Saya</button>
         </article>
@@ -66,10 +66,10 @@
         <article class="baris-jadwal">
           <time class="kotak-tanggal" datetime="2027-01-20">20 JAN</time>
           <div class="detail-jadwal">
-            <h3>Global Game Jam 2027 (Situs Eksternal)</h3>
-            <p>Ajang pembuatan game serentak seluruh dunia selama akhir pekan.</p>
+            <h3>Global Game Jam 2027</h3>
+            <p>Ajang pembuatan game serentak selama akhir pekan.</p>
           </div>
-          <a href="https://globalgamejam.org" target="_blank" rel="noopener" class="tombol tombol-sekunder" onclick="alert('Membuka situs resmi Global Game Jam...')">Web Resmi</a>
+          <a href="https://globalgamejam.org" target="_blank" rel="noopener" class="tombol tombol-sekunder" onclick="alert('Membuka situs Global Game Jam...')">Web Resmi</a>
         </article>
       </div>
     </section>
@@ -77,7 +77,54 @@
 
   <footer class="kaki-web">
     <div class="wadah">
-      <p>&copy; 2026 IndieArc - Global Indie Gaming &amp; Developer Hub.</p>
+      <div class="grid-footer">
+        <div class="kolom-footer">
+          <h3>Navigasi</h3>
+          <ul>
+            <li><a href="Index.html">Berita &amp; Beranda</a></li>
+            <li><a href="TokoGame.html">Toko Game</a></li>
+            <li><a href="Event.html">Event &amp; Game Jam</a></li>
+            <li><a href="PasarAset.html">Pasar Aset</a></li>
+          </ul>
+        </div>
+
+        <div class="kolom-footer">
+          <h3>Komunitas</h3>
+          <ul>
+            <li><a href="DevHub.html">Dev Hub</a></li>
+            <li><a href="HistoryPembelianUser.html">History Pembelian</a></li>
+            <li><a href="Index.html#diskusi">Forum Diskusi <span class="badge-footer">2k+ member</span></a></li>
+            <li><a href="Event.html">IndieArc Jam #12</a></li>
+          </ul>
+        </div>
+
+        <div class="kolom-footer">
+          <h3>Proyek &amp; Repository</h3>
+          <div class="grup-supporter">
+            <div>
+              <span class="sub-footer">Kontributor</span>
+              <div class="baris-avatar">
+                <span class="avatar-bulat" title="Saba">SB</span>
+                <span class="avatar-bulat avatar-aksen" title="IndieArc">IA</span>
+                <span class="avatar-bulat avatar-gelap" title="Web Dev">&lt;/&gt;</span>
+              </div>
+            </div>
+            <div>
+              <span class="sub-footer">Source Code</span>
+              <a href="https://github.com/SabaIsHereYo/PROJECT-DESAIN-WEB.git" target="_blank" rel="noopener" class="tombol-github">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+                <span>GitHub Repository</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bawah-footer">
+        <p>Copyright &copy; 2026 IndieArc. Dibuat untuk Proyek Desain Web.</p>
+      </div>
     </div>
   </footer>
 

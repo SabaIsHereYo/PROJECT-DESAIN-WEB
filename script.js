@@ -1,8 +1,20 @@
-// ambil status sesi akun dan POV dari localStorage
+// daftar akun bawaan
+const AKUN_BAWAAN = [
+  { username: 'IndieStudio_ID', password: 'dev123', role: 'developer', label: 'Developer' },
+  { username: 'Budi_Gamer', password: 'user123', role: 'user', label: 'User' },
+  { username: 'admin', password: 'admin123', role: 'developer', label: 'Developer' }
+];
+
+function ambilDaftarAkun() {
+  const akunTersimpan = JSON.parse(localStorage.getItem('indiearc_accounts')) || [];
+  return AKUN_BAWAAN.concat(akunTersimpan);
+}
+
 function ambilSesi() {
   const defaultSesi = {
-    username: 'Tamu_Gamer',
-    pov: 'user',
+    username: 'Tamu',
+    role: 'guest',
+    mode: 'user',
     sudahLogin: false
   };
   return JSON.parse(localStorage.getItem('indiearc_sesi')) || defaultSesi;
@@ -12,21 +24,31 @@ function simpanSesi(sesiBaru) {
   localStorage.setItem('indiearc_sesi', JSON.stringify(sesiBaru));
 }
 
-// perbarui tampilan navbar dan akses POV di semua halaman
-function terapkanTampilanPov() {
+// perbarui tampilan navbar dan halaman sesuai akun yang login
+function perbaruiTampilanAkun() {
   const sesi = ambilSesi();
-  const btnGantiPov = document.getElementById('btnGantiPov');
+  const btnMode = document.getElementById('btnMode');
   const linkAuth = document.getElementById('linkAuth');
   const linkDevHub = document.getElementById('linkDevHub');
   const sapaanToko = document.getElementById('sapaanToko');
 
-  if (btnGantiPov) {
-    if (sesi.pov === 'developer') {
-      btnGantiPov.textContent = 'POV: Developer (' + sesi.username + ')';
-      btnGantiPov.classList.add('mode-dev');
+  if (btnMode) {
+    btnMode.classList.remove('mode-tamu', 'mode-dev');
+
+    if (!sesi.sudahLogin) {
+      btnMode.textContent = 'Belum Login';
+      btnMode.classList.add('mode-tamu');
+      btnMode.title = 'Klik untuk login';
+    } else if (sesi.role === 'developer' && sesi.mode === 'developer') {
+      btnMode.textContent = 'Developer: ' + sesi.username;
+      btnMode.classList.add('mode-dev');
+      btnMode.title = 'Klik untuk lihat tampilan User';
+    } else if (sesi.role === 'developer' && sesi.mode === 'user') {
+      btnMode.textContent = 'User: ' + sesi.username;
+      btnMode.title = 'Klik untuk kembali ke tampilan Developer';
     } else {
-      btnGantiPov.textContent = 'POV: User (' + sesi.username + ')';
-      btnGantiPov.classList.remove('mode-dev');
+      btnMode.textContent = 'User: ' + sesi.username;
+      btnMode.title = 'Akun User';
     }
   }
 
@@ -37,7 +59,7 @@ function terapkanTampilanPov() {
       linkAuth.onclick = function (e) {
         e.preventDefault();
         localStorage.removeItem('indiearc_sesi');
-        alert('Berhasil keluar dari akun.');
+        alert('Berhasil logout.');
         window.location.href = 'Index.html';
       };
     } else {
@@ -47,9 +69,9 @@ function terapkanTampilanPov() {
   }
 
   if (linkDevHub) {
-    if (sesi.pov === 'user') {
+    if (!sesi.sudahLogin || sesi.role !== 'developer' || sesi.mode !== 'developer') {
       linkDevHub.classList.add('terkunci');
-      linkDevHub.title = 'Ganti ke POV Developer untuk membuka menu ini';
+      linkDevHub.title = 'Khusus akun Developer';
     } else {
       linkDevHub.classList.remove('terkunci');
       linkDevHub.title = 'Dashboard Developer';
@@ -57,61 +79,81 @@ function terapkanTampilanPov() {
   }
 
   if (sapaanToko) {
-    sapaanToko.textContent = 'Aktif sebagai ' + sesi.username + ' (' + sesi.pov.toUpperCase() + '). Pilih game atau demo di bawah.';
+    const info = sesi.sudahLogin
+      ? 'Login sebagai ' + sesi.username
+      : 'Belum login';
+    sapaanToko.textContent = info + '. Pilih game atau demo di bawah.';
   }
 
-  // atur visibilitas konten di halaman DevHub.html
+  // atur akses halaman DevHub.html
   const pesanBukanDev = document.getElementById('pesanBukanDev');
   const kontenDevHub = document.getElementById('kontenDevHub');
+  const judulAksesDev = document.getElementById('judulAksesDev');
+  const deskripsiAksesDev = document.getElementById('deskripsiAksesDev');
   const namaStudioDev = document.getElementById('namaStudioDev');
 
   if (pesanBukanDev && kontenDevHub) {
-    if (sesi.pov === 'developer') {
+    if (sesi.sudahLogin && sesi.role === 'developer' && sesi.mode === 'developer') {
       pesanBukanDev.style.display = 'none';
       kontenDevHub.style.display = 'block';
       if (namaStudioDev) namaStudioDev.textContent = sesi.username;
     } else {
       pesanBukanDev.style.display = 'block';
       kontenDevHub.style.display = 'none';
+
+      if (!sesi.sudahLogin) {
+        if (judulAksesDev) judulAksesDev.textContent = 'Halaman Khusus Developer';
+        if (deskripsiAksesDev) {
+          deskripsiAksesDev.textContent = 'Anda belum login. Silakan login menggunakan akun Developer untuk membuka halaman ini.';
+        }
+      } else if (sesi.role !== 'developer') {
+        if (judulAksesDev) judulAksesDev.textContent = 'Akses Ditolak';
+        if (deskripsiAksesDev) {
+          deskripsiAksesDev.textContent = 'Akun "' + sesi.username + '" adalah akun User. Gunakan akun Developer untuk membuka Dev Hub.';
+        }
+      } else {
+        if (judulAksesDev) judulAksesDev.textContent = 'Tampilan User Aktif';
+        if (deskripsiAksesDev) {
+          deskripsiAksesDev.textContent = 'Anda sedang memakai tampilan User. Klik tombol akun di kanan atas untuk kembali ke tampilan Developer.';
+        }
+      }
     }
   }
 }
 
-terapkanTampilanPov();
+perbaruiTampilanAkun();
 
-// 1. tombol ganti POV cepat di navbar
-const btnGantiPov = document.getElementById('btnGantiPov');
-if (btnGantiPov) {
-  btnGantiPov.addEventListener('click', function () {
+// tombol status akun di navbar
+const btnMode = document.getElementById('btnMode');
+if (btnMode) {
+  btnMode.addEventListener('click', function () {
     const sesi = ambilSesi();
-    if (sesi.pov === 'user') {
-      sesi.pov = 'developer';
-      if (sesi.username === 'Tamu_Gamer') sesi.username = 'IndieStudio_ID';
-      simpanSesi(sesi);
-      alert('Beralih ke POV Developer! Menu Dev Hub sekarang terbuka.');
-    } else {
-      sesi.pov = 'user';
-      if (sesi.username === 'IndieStudio_ID') sesi.username = 'Tamu_Gamer';
-      simpanSesi(sesi);
-      alert('Beralih ke POV User (Gamer)!');
+
+    if (!sesi.sudahLogin) {
+      alert('Anda belum login. Silakan login terlebih dahulu.');
+      window.location.href = 'Login.html';
+      return;
     }
-    terapkanTampilanPov();
+
+    if (sesi.role !== 'developer') {
+      alert('Akun "' + sesi.username + '" terdaftar sebagai User. Login dengan akun Developer untuk membuka mode Developer.');
+      return;
+    }
+
+    if (sesi.mode === 'developer') {
+      sesi.mode = 'user';
+      simpanSesi(sesi);
+      alert('Beralih ke tampilan User.');
+    } else {
+      sesi.mode = 'developer';
+      simpanSesi(sesi);
+      alert('Kembali ke tampilan Developer.');
+    }
+    perbaruiTampilanAkun();
   });
 }
 
-// tombol aktifkan dev di halaman DevHub.html
-const btnAktifkanDev = document.getElementById('btnAktifkanDev');
-if (btnAktifkanDev) {
-  btnAktifkanDev.addEventListener('click', function () {
-    const sesi = ambilSesi();
-    sesi.pov = 'developer';
-    if (sesi.username === 'Tamu_Gamer') sesi.username = 'IndieStudio_ID';
-    simpanSesi(sesi);
-    terapkanTampilanPov();
-  });
-}
-
-// 2. menu hamburger di layar HP
+// menu hamburger di layar HP
 const btnMenu = document.getElementById('btnMenu');
 const menuNav = document.getElementById('menuNav');
 if (btnMenu && menuNav) {
@@ -120,7 +162,7 @@ if (btnMenu && menuNav) {
   });
 }
 
-// 3 & 4. modal baca berita dan tutup modal (Index.html)
+// modal baca berita (Index.html)
 const btnBukaBerita = document.getElementById('btnBukaBerita');
 const btnTutupBerita = document.getElementById('btnTutupBerita');
 const modalBerita = document.getElementById('modalBerita');
@@ -136,7 +178,7 @@ if (btnTutupBerita && modalBerita) {
   });
 }
 
-// 5. tombol like berita utama (Index.html)
+// tombol suka berita (Index.html)
 const btnLikeBerita = document.getElementById('btnLikeBerita');
 const jumlahLike = document.getElementById('jumlahLike');
 let sudahLike = false;
@@ -155,7 +197,7 @@ if (btnLikeBerita && jumlahLike) {
   });
 }
 
-// 6. form kirim komentar berita (Index.html)
+// kirim komentar berita (Index.html)
 const formKomentar = document.getElementById('formKomentar');
 const inputKomentar = document.getElementById('inputKomentar');
 const daftarKomentar = document.getElementById('daftarKomentar');
@@ -166,16 +208,17 @@ if (formKomentar && inputKomentar && daftarKomentar) {
     if (!isi) return;
 
     const sesi = ambilSesi();
+    const namaPengirim = sesi.sudahLogin ? sesi.username : 'Tamu';
     const itemBaru = document.createElement('article');
     itemBaru.className = 'item-komentar';
-    itemBaru.innerHTML = '<strong>' + sesi.username + ':</strong> ' + isi;
+    itemBaru.innerHTML = '<strong>' + namaPengirim + ':</strong> ' + isi;
     daftarKomentar.prepend(itemBaru);
     inputKomentar.value = '';
-    alert('Komentar berhasil ditambahkan!');
+    alert('Komentar terkirim!');
   });
 }
 
-// 7. filter kategori (TokoGame.html & PasarAset.html)
+// filter kategori (TokoGame.html & PasarAset.html)
 const tombolFilter = document.querySelectorAll('.tombol-filter');
 const itemFilter = document.querySelectorAll('.item-filter');
 
@@ -198,7 +241,7 @@ tombolFilter.forEach(function (btn) {
   });
 });
 
-// 8. pencarian game real-time (TokoGame.html)
+// pencarian game (TokoGame.html)
 const cariGame = document.getElementById('cariGame');
 if (cariGame) {
   cariGame.addEventListener('input', function () {
@@ -210,19 +253,19 @@ if (cariGame) {
   });
 }
 
-// 9. tombol wishlist game (TokoGame.html)
+// wishlist game (TokoGame.html)
 function toggleWishlist(tombol, namaGame) {
   tombol.classList.toggle('disukai');
   if (tombol.classList.contains('disukai')) {
     tombol.innerHTML = '&#9829;';
-    alert('"' + namaGame + '" ditambahkan ke Wishlist!');
+    alert('"' + namaGame + '" ditambahkan ke Wishlist.');
   } else {
     tombol.innerHTML = '&#9825;';
     alert('"' + namaGame + '" dihapus dari Wishlist.');
   }
 }
 
-// simpan transaksi ke localStorage untuk HistoryPembelianUser.html
+// simpan transaksi ke localStorage
 function simpanTransaksi(nama, kategori, harga) {
   const daftarLama = JSON.parse(localStorage.getItem('indiearc_history')) || [];
   const nomorAcak = Math.floor(1030 + Math.random() * 8900);
@@ -243,40 +286,50 @@ function simpanTransaksi(nama, kategori, harga) {
   localStorage.setItem('indiearc_history', JSON.stringify(daftarLama));
 }
 
-// 10 & 11. tombol beli dan unduh item (TokoGame.html & PasarAset.html)
+// beli dan unduh item (TokoGame.html & PasarAset.html)
 function beliItem(nama, kategori, harga) {
   const sesi = ambilSesi();
-  const konfirmasi = confirm('Akun: ' + sesi.username + '\nLanjutkan pembelian "' + nama + '" seharga ' + harga + '?');
+  if (!sesi.sudahLogin) {
+    alert('Silakan login terlebih dahulu sebelum membeli.');
+    window.location.href = 'Login.html';
+    return;
+  }
+  const konfirmasi = confirm('Akun: ' + sesi.username + '\nBeli "' + nama + '" seharga ' + harga + '?');
   if (konfirmasi) {
     simpanTransaksi(nama, kategori, harga);
-    alert('Pembelian berhasil! Item tercatat di halaman History.');
+    alert('Pembelian berhasil! Cek di halaman History.');
   }
 }
 
 function unduhItem(nama, kategori) {
   simpanTransaksi(nama, kategori, 'Gratis');
-  alert('Unduhan dimulai untuk "' + nama + '". Riwayat tercatat di halaman History.');
+  alert('Mengunduh "' + nama + '"...');
 }
 
-// 12. info lisensi aset (PasarAset.html)
+// info lisensi aset (PasarAset.html)
 function infoLisensi(jenis, keterangan) {
-  alert('Jenis Lisensi: ' + jenis + '\n\nKetentuan:\n' + keterangan);
+  alert('Lisensi: ' + jenis + '\n\n' + keterangan);
 }
 
-// 13 & 14. daftar event dan pengingat rilis (Event.html)
+// daftar event dan pengingat rilis (Event.html)
 function daftarEvent(tombol, namaEvent) {
   const sesi = ambilSesi();
-  alert('Pendaftaran berhasil! Akun "' + sesi.username + '" terdaftar di "' + namaEvent + '".');
-  tombol.textContent = 'Sudah Terdaftar';
+  if (!sesi.sudahLogin) {
+    alert('Silakan login terlebih dahulu untuk mendaftar event.');
+    window.location.href = 'Login.html';
+    return;
+  }
+  alert('Berhasil mendaftar "' + namaEvent + '" atas nama ' + sesi.username + '.');
+  tombol.textContent = 'Terdaftar';
   tombol.disabled = true;
 }
 
 function aktifkanPengingat(tombol, namaGame) {
-  alert('Pengingat jadwal rilis untuk "' + namaGame + '" diaktifkan!');
-  tombol.textContent = 'Pengingat Aktif';
+  alert('Pengingat rilis "' + namaGame + '" diaktifkan.');
+  tombol.textContent = 'Diingatkan';
 }
 
-// 15, 16, 17. fitur halaman DevHub.html
+// tambah game baru di DevHub.html
 const formPublishGame = document.getElementById('formPublishGame');
 const tabelGameDev = document.getElementById('tabelGameDev');
 if (formPublishGame && tabelGameDev) {
@@ -297,7 +350,7 @@ if (formPublishGame && tabelGameDev) {
 
     tabelGameDev.prepend(baris);
     formPublishGame.reset();
-    alert('Game "' + judul + '" berhasil dipublikasikan ke daftar developer!');
+    alert('Game "' + judul + '" berhasil ditambahkan.');
   });
 }
 
@@ -316,18 +369,18 @@ const saldoDev = document.getElementById('saldoDev');
 if (btnTarikSaldo && saldoDev) {
   btnTarikSaldo.addEventListener('click', function () {
     if (saldoDev.textContent === 'Rp 0') {
-      alert('Saldo pendapatan saat ini sudah ditarik.');
+      alert('Saldo sudah ditarik.');
       return;
     }
-    const yakin = confirm('Tarik seluruh saldo pendapatan (' + saldoDev.textContent + ') ke rekening terdaftar?');
+    const yakin = confirm('Tarik saldo sebesar ' + saldoDev.textContent + '?');
     if (yakin) {
       saldoDev.textContent = 'Rp 0';
-      alert('Permintaan pencairan dana berhasil diproses!');
+      alert('Penarikan saldo berhasil diproses.');
     }
   });
 }
 
-// 18 & 19. render riwayat transaksi dan tombol reset (HistoryPembelianUser.html)
+// tampilkan history transaksi (HistoryPembelianUser.html)
 const tabelHistory = document.getElementById('tabelHistory');
 if (tabelHistory) {
   const dataTersimpan = JSON.parse(localStorage.getItem('indiearc_history')) || [];
@@ -339,7 +392,7 @@ if (tabelHistory) {
       '<td>' + item.kategori + '</td>' +
       '<td>' + item.tanggal + '</td>' +
       '<td>' + item.harga + '</td>' +
-      '<td><button class="tombol tombol-sekunder" onclick="alert(\'Mengunduh file ' + item.nama + '...\')">Unduh</button></td>';
+      '<td><button class="tombol tombol-sekunder" onclick="alert(\'Mengunduh ' + item.nama + '...\')">Unduh</button></td>';
     tabelHistory.prepend(baris);
   });
 }
@@ -348,30 +401,53 @@ const btnResetHistory = document.getElementById('btnResetHistory');
 if (btnResetHistory) {
   btnResetHistory.addEventListener('click', function () {
     localStorage.removeItem('indiearc_history');
-    alert('Riwayat transaksi baru telah direset.');
+    alert('Transaksi baru telah dihapus.');
     location.reload();
   });
 }
 
-// 20 & 21. form Login.html dan Register.html
+// login (Login.html)
 const formLogin = document.getElementById('formLogin');
 if (formLogin) {
   formLogin.addEventListener('submit', function (e) {
     e.preventDefault();
     const username = document.getElementById('loginUsername').value.trim();
+    const password = document.getElementById('loginPassword').value;
     const roleDipilih = document.querySelector('input[name="roleLogin"]:checked').value;
 
+    const daftarAkun = ambilDaftarAkun();
+    const akunCocok = daftarAkun.find(function (a) {
+      return a.username.toLowerCase() === username.toLowerCase();
+    });
+
+    if (!akunCocok) {
+      alert('Username tidak ditemukan.');
+      return;
+    }
+
+    if (akunCocok.password !== password) {
+      alert('Kata sandi salah.');
+      return;
+    }
+
+    if (roleDipilih === 'developer' && akunCocok.role !== 'developer') {
+      alert('Akun ini bukan akun Developer.');
+      return;
+    }
+
     simpanSesi({
-      username: username,
-      pov: roleDipilih,
+      username: akunCocok.username,
+      role: akunCocok.role,
+      mode: roleDipilih,
       sudahLogin: true
     });
 
-    alert('Selamat datang, ' + username + '! Anda masuk dalam mode POV ' + roleDipilih.toUpperCase() + '.');
+    alert('Berhasil masuk sebagai ' + akunCocok.username + '.');
     window.location.href = roleDipilih === 'developer' ? 'DevHub.html' : 'Index.html';
   });
 }
 
+// register (Register.html)
 const formRegister = document.getElementById('formRegister');
 if (formRegister) {
   formRegister.addEventListener('submit', function (e) {
@@ -382,17 +458,37 @@ if (formRegister) {
     const roleDipilih = document.querySelector('input[name="roleRegister"]:checked').value;
 
     if (pass !== konfirmasi) {
-      alert('Kata sandi dan konfirmasi kata sandi tidak cocok!');
+      alert('Konfirmasi kata sandi tidak sama.');
       return;
     }
 
+    const daftarAkun = ambilDaftarAkun();
+    const sudahAda = daftarAkun.some(function (a) {
+      return a.username.toLowerCase() === username.toLowerCase();
+    });
+
+    if (sudahAda) {
+      alert('Username sudah digunakan.');
+      return;
+    }
+
+    const akunTersimpan = JSON.parse(localStorage.getItem('indiearc_accounts')) || [];
+    akunTersimpan.push({
+      username: username,
+      password: pass,
+      role: roleDipilih,
+      label: roleDipilih === 'developer' ? 'Developer' : 'User'
+    });
+    localStorage.setItem('indiearc_accounts', JSON.stringify(akunTersimpan));
+
     simpanSesi({
       username: username,
-      pov: roleDipilih,
+      role: roleDipilih,
+      mode: roleDipilih,
       sudahLogin: true
     });
 
-    alert('Pendaftaran berhasil! Akun "' + username + '" aktif sebagai ' + roleDipilih.toUpperCase() + '.');
+    alert('Pendaftaran berhasil! Selamat datang, ' + username + '.');
     window.location.href = roleDipilih === 'developer' ? 'DevHub.html' : 'Index.html';
   });
 }

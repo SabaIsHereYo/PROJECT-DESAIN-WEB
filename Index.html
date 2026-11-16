@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IndieArc - Beranda & Berita Game Indie</title>
+  <title>IndieArc - Berita &amp; Komunitas Game Indie</title>
   <link rel="stylesheet" href="Style.css">
 </head>
 <body>
@@ -21,7 +21,7 @@
         <a href="HistoryPembelianUser.html">History</a>
       </nav>
       <div class="area-akun">
-        <button class="badge-pov" id="btnGantiPov" title="Klik untuk ganti POV">POV: User</button>
+        <button class="badge-mode" id="btnMode" title="Status Akun">Belum Login</button>
         <a href="Login.html" class="tombol tombol-kecil tombol-sekunder" id="linkAuth">Login</a>
       </div>
     </div>
@@ -30,11 +30,11 @@
   <main class="wadah">
     <section class="hero-berita">
       <article class="isi-hero">
-        <span class="label-kategori">Sorotan Developer Lokal</span>
+        <span class="label-kategori">Sorotan Developer</span>
         <h1>Perjalanan Solo Developer Menggarap "Hollow Realm" Selama 18 Bulan</h1>
         <p>Berawal dari prototipe kecil saat ikut Game Jam, game aksi-petualangan ini akhirnya tembus pasar global tanpa penerbit besar.</p>
         <div class="info-meta">
-          <time datetime="2026-11-16">16 November 2026</time> &bull; Tim Redaksi IndieArc
+          <time datetime="2026-11-16">16 November 2026</time> &bull; Redaksi IndieArc
         </div>
         <div class="grup-aksi">
           <button class="tombol tombol-utama" id="btnBukaBerita">Baca Artikel</button>
@@ -46,19 +46,19 @@
     <section class="bagian">
       <div class="judul-bagian">
         <h2>Kabar Game Indie Global</h2>
-        <p>Info rilis dan tautan langsung menuju halaman toko resmi pengembangnya.</p>
+        <p>Info rilis dan tautan menuju halaman toko resmi pengembangnya.</p>
       </div>
 
       <div class="grid-kartu">
         <article class="kartu">
           <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&q=80" alt="Celeste Mountain">
           <div class="isi-kartu">
-            <span class="tag-platform">Steam Store</span>
+            <span class="tag-platform">Steam</span>
             <h3>Celeste II: Summit Echoes</h3>
             <p>Ekspansi baru dengan 40 level tambahan dan mode co-op lokal resmi diumumkan.</p>
             <div class="bawah-kartu">
               <span class="harga">Rp 165.000</span>
-              <a href="https://store.steampowered.com" target="_blank" rel="noopener" class="tombol tombol-sekunder" onclick="alert('Mengarahkan ke halaman resmi Steam...')">Cek di Steam</a>
+              <a href="https://store.steampowered.com" target="_blank" rel="noopener" class="tombol tombol-sekunder" onclick="alert('Membuka halaman Steam...')">Cek di Steam</a>
             </div>
           </div>
         </article>
@@ -68,10 +68,10 @@
           <div class="isi-kartu">
             <span class="tag-platform">itch.io</span>
             <h3>Crypt of the Lantern</h3>
-            <p>Game roguelike eksperimental buatan dua mahasiswa asal Bandung yang viral di forum indie.</p>
+            <p>Game roguelike buatan dua mahasiswa asal Bandung yang ramai dibahas di forum indie.</p>
             <div class="bawah-kartu">
               <span class="harga gratis">Gratis / Donasi</span>
-              <a href="https://itch.io" target="_blank" rel="noopener" class="tombol tombol-sekunder" onclick="alert('Membuka situs resmi itch.io...')">Buka itch.io</a>
+              <a href="https://itch.io" target="_blank" rel="noopener" class="tombol tombol-sekunder" onclick="alert('Membuka halaman itch.io...')">Buka itch.io</a>
             </div>
           </div>
         </article>
@@ -79,11 +79,11 @@
         <article class="kartu">
           <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80" alt="Open Source Racer">
           <div class="isi-kartu">
-            <span class="tag-platform">OpenGames</span>
+            <span class="tag-platform">Open Source</span>
             <h3>SuperTuxKart Remastered</h3>
-            <p>Pembaruan mesin grafis baru untuk game balap open-source bebas mikrotransaksi.</p>
+            <p>Pembaruan grafis baru untuk game balap open-source bebas iklan dan mikrotransaksi.</p>
             <div class="bawah-kartu">
-              <span class="harga gratis">Open Source</span>
+              <span class="harga gratis">Gratis</span>
               <a href="https://supertuxkart.net" target="_blank" rel="noopener" class="tombol tombol-sekunder" onclick="alert('Membuka situs resmi SuperTuxKart...')">Situs Resmi</a>
             </div>
           </div>
@@ -91,11 +91,11 @@
       </div>
     </section>
 
-    <section class="bagian kotak-info">
+    <section class="bagian kotak-info" id="diskusi">
       <h2>Diskusi Komunitas</h2>
-      <p class="teks-redup">Tulis tanggapanmu mengenai perkembangan game indie lokal.</p>
+      <p class="teks-redup">Tulis komentar singkat tentang game indie favoritmu.</p>
       <form class="form-komentar" id="formKomentar">
-        <input type="text" id="inputKomentar" placeholder="Tulis komentar singkat di sini..." required>
+        <input type="text" id="inputKomentar" placeholder="Tulis komentar..." required>
         <button type="submit" class="tombol tombol-utama">Kirim</button>
       </form>
       <div class="daftar-komentar" id="daftarKomentar">
@@ -103,7 +103,7 @@
           <strong>Rizky_Gamer:</strong> Ditunggu banget demo game lokal terbarunya bulan ini!
         </article>
         <article class="item-komentar">
-          <strong>StudioKecil_ID:</strong> Terima kasih IndieArc, aset CC0 di sini sangat membantu tim kami.
+          <strong>StudioKecil_ID:</strong> Aset gratis di sini sangat membantu proyek tim kami.
         </article>
       </div>
     </section>
@@ -115,14 +115,61 @@
         <h3>Kisah Dibalik "Hollow Realm"</h3>
         <button class="tutup-modal" id="btnTutupBerita">&times;</button>
       </header>
-      <p>Pengembang game ini memulai proyeknya menggunakan aset gratis berlisensi CC0 sebelum akhirnya menggandeng ilustrator lokal. Lewat masukan komunitas di forum dan uji coba versi demo, game ini berhasil mengumpulkan lebih dari 2.000 pemain aktif di minggu pertama perilisannya.</p>
-      <p>Tips utama untuk pemula: fokus selesaikan mekanik inti terlebih dahulu dan jangan ragu merilis versi demo lebih awal untuk menjaring kritik pemain.</p>
+      <p>Pengembang game ini memulai proyeknya memakai aset gratis berlisensi CC0 sebelum menggandeng ilustrator lokal. Lewat masukan pemain di forum dan uji coba versi demo, game ini berhasil mengumpulkan lebih dari 2.000 pemain aktif di minggu pertama rilis.</p>
+      <p>Saran untuk pemula: selesaikan mekanik inti terlebih dahulu dan rilis versi demo lebih awal untuk mendapat masukan pemain.</p>
     </article>
   </dialog>
 
   <footer class="kaki-web">
     <div class="wadah">
-      <p>&copy; 2026 IndieArc - Global Indie Gaming &amp; Developer Hub.</p>
+      <div class="grid-footer">
+        <div class="kolom-footer">
+          <h3>Navigasi</h3>
+          <ul>
+            <li><a href="Index.html">Berita &amp; Beranda</a></li>
+            <li><a href="TokoGame.html">Toko Game</a></li>
+            <li><a href="Event.html">Event &amp; Game Jam</a></li>
+            <li><a href="PasarAset.html">Pasar Aset</a></li>
+          </ul>
+        </div>
+
+        <div class="kolom-footer">
+          <h3>Komunitas</h3>
+          <ul>
+            <li><a href="DevHub.html">Dev Hub</a></li>
+            <li><a href="HistoryPembelianUser.html">History Pembelian</a></li>
+            <li><a href="Index.html#diskusi">Forum Diskusi <span class="badge-footer">2k+ member</span></a></li>
+            <li><a href="Event.html">IndieArc Jam #12</a></li>
+          </ul>
+        </div>
+
+        <div class="kolom-footer">
+          <h3>Proyek &amp; Repository</h3>
+          <div class="grup-supporter">
+            <div>
+              <span class="sub-footer">Kontributor</span>
+              <div class="baris-avatar">
+                <span class="avatar-bulat" title="Saba">SB</span>
+                <span class="avatar-bulat avatar-aksen" title="IndieArc">IA</span>
+                <span class="avatar-bulat avatar-gelap" title="Web Dev">&lt;/&gt;</span>
+              </div>
+            </div>
+            <div>
+              <span class="sub-footer">Source Code</span>
+              <a href="https://github.com/SabaIsHereYo/PROJECT-DESAIN-WEB.git" target="_blank" rel="noopener" class="tombol-github">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+                <span>GitHub Repository</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bawah-footer">
+        <p>Copyright &copy; 2026 IndieArc. Dibuat untuk Proyek Desain Web.</p>
+      </div>
     </div>
   </footer>
 
