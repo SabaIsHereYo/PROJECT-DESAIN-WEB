@@ -12,6 +12,7 @@
   --redup: #94a3b8;
   --aksen: #38bdf8;
   --hijau: #10b981;
+  --ungu: #a855f7;
 }
 
 body {
@@ -36,6 +37,11 @@ main {
   margin: 0 auto;
 }
 
+.teks-redup {
+  color: var(--redup);
+  font-size: 0.9rem;
+}
+
 /* navigasi atas */
 .kepala-web {
   background-color: #151922;
@@ -50,6 +56,7 @@ main {
   align-items: center;
   justify-content: space-between;
   min-height: 64px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
@@ -58,7 +65,6 @@ main {
   font-weight: 700;
   color: #fff;
   text-decoration: none;
-  letter-spacing: 0.5px;
 }
 
 .logo span {
@@ -67,15 +73,15 @@ main {
 
 .menu-nav {
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 
 .menu-nav a {
   color: var(--redup);
   text-decoration: none;
-  padding: 8px 12px;
+  padding: 7px 11px;
   border-radius: 6px;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   transition: 0.2s;
 }
 
@@ -89,6 +95,33 @@ main {
   border-bottom: 2px solid var(--aksen);
 }
 
+.menu-nav a.terkunci {
+  opacity: 0.55;
+}
+
+.area-akun {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badge-pov {
+  background-color: #222936;
+  color: var(--aksen);
+  border: 1px solid var(--aksen);
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.badge-pov.mode-dev {
+  color: #e9d5ff;
+  border-color: var(--ungu);
+  background-color: rgba(168, 85, 247, 0.15);
+}
+
 .tombol-menu {
   display: none;
   background: none;
@@ -100,7 +133,7 @@ main {
   cursor: pointer;
 }
 
-/* hero berita di beranda */
+/* hero berita */
 .hero-berita {
   background: linear-gradient(to right, rgba(17, 20, 26, 0.95), rgba(17, 20, 26, 0.7)),
               url('https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1200&q=80') center/cover;
@@ -126,7 +159,7 @@ main {
 }
 
 .isi-hero h1 {
-  font-size: 1.75rem;
+  font-size: 1.7rem;
   line-height: 1.3;
   margin-bottom: 10px;
 }
@@ -140,6 +173,12 @@ main {
   font-size: 0.85rem;
   color: var(--redup);
   margin-bottom: 18px;
+}
+
+.grup-aksi {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 /* bagian & judul */
@@ -167,7 +206,12 @@ main {
   margin: 24px 0 12px;
 }
 
-/* grid kartu game dan aset */
+.sub-judul-nol {
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+/* grid kartu */
 .grid-kartu {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -197,11 +241,17 @@ main {
   flex: 1;
 }
 
+.atas-kartu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
 .tag-platform {
   font-size: 0.75rem;
   color: var(--aksen);
   font-weight: 600;
-  margin-bottom: 6px;
 }
 
 .tag-demo {
@@ -210,6 +260,18 @@ main {
 
 .tag-gratis {
   color: var(--hijau);
+}
+
+.tombol-wishlist {
+  background: none;
+  border: none;
+  color: var(--redup);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.tombol-wishlist.disukai {
+  color: #f43f5e;
 }
 
 .isi-kartu h3 {
@@ -233,6 +295,11 @@ main {
   gap: 8px;
 }
 
+.grup-tombol-kartu {
+  display: flex;
+  gap: 6px;
+}
+
 .harga {
   font-weight: 700;
   font-size: 0.92rem;
@@ -253,6 +320,16 @@ main {
   cursor: pointer;
   border: none;
   transition: 0.2s;
+  text-align: center;
+}
+
+.tombol-kecil {
+  padding: 5px 10px;
+  font-size: 0.8rem;
+}
+
+.tombol-penuh {
+  width: 100%;
 }
 
 .tombol-utama {
@@ -274,11 +351,19 @@ main {
   background-color: #313a4c;
 }
 
-/* filter kategori */
+/* filter & pencarian */
+.kontrol-katalog {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
 .baris-filter {
   display: flex;
   gap: 8px;
-  margin-bottom: 20px;
   flex-wrap: wrap;
 }
 
@@ -299,7 +384,46 @@ main {
   border-color: var(--aksen);
 }
 
-/* halaman event */
+.input-cari {
+  background-color: var(--kartu);
+  border: 1px solid var(--garis);
+  color: var(--teks);
+  padding: 8px 12px;
+  border-radius: 6px;
+  min-width: 220px;
+}
+
+/* komentar berita */
+.form-komentar {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0 16px;
+}
+
+.form-komentar input {
+  flex: 1;
+  background-color: var(--latar);
+  border: 1px solid var(--garis);
+  color: var(--teks);
+  padding: 9px 12px;
+  border-radius: 6px;
+}
+
+.daftar-komentar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item-komentar {
+  background-color: #141820;
+  border: 1px solid var(--garis);
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 0.88rem;
+}
+
+/* event */
 .banner-event {
   background-color: var(--kartu);
   border: 1px solid var(--garis);
@@ -400,6 +524,22 @@ main {
   color: var(--hijau);
 }
 
+.form-upload-game {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.form-upload-game input,
+.form-upload-game select {
+  background-color: var(--latar);
+  border: 1px solid var(--garis);
+  color: var(--teks);
+  padding: 9px 12px;
+  border-radius: 6px;
+}
+
 .baris-judul-history {
   display: flex;
   justify-content: space-between;
@@ -438,10 +578,18 @@ main {
 .badge-aktif {
   background-color: rgba(16, 185, 129, 0.15);
   color: var(--hijau);
-  padding: 3px 8px;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  padding: 4px 10px;
   border-radius: 4px;
   font-size: 0.78rem;
   font-weight: 600;
+  cursor: pointer;
+}
+
+.badge-draft {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.4);
 }
 
 /* kotak info & modal */
@@ -452,14 +600,19 @@ main {
   padding: 20px;
 }
 
-.kotak-info h3 {
-  font-size: 1rem;
-  margin-bottom: 6px;
+.tengah-pesan {
+  text-align: center;
+  max-width: 560px;
+  margin: 40px auto;
 }
 
-.kotak-info p {
-  font-size: 0.9rem;
+.tengah-pesan p {
+  margin: 10px 0 18px;
   color: var(--redup);
+}
+
+.tengah-tombol {
+  justify-content: center;
 }
 
 .modal-dialog {
@@ -498,6 +651,88 @@ main {
   margin-bottom: 10px;
 }
 
+/* halaman login & register */
+.wadah-auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kotak-auth {
+  background-color: var(--kartu);
+  border: 1px solid var(--garis);
+  border-radius: 10px;
+  padding: 28px;
+  width: 100%;
+  max-width: 440px;
+}
+
+.kotak-auth h1 {
+  font-size: 1.45rem;
+  margin-bottom: 4px;
+}
+
+.form-auth {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.grup-input {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.grup-input label {
+  font-size: 0.86rem;
+  color: var(--teks);
+}
+
+.grup-input input {
+  background-color: var(--latar);
+  border: 1px solid var(--garis);
+  color: var(--teks);
+  padding: 10px 12px;
+  border-radius: 6px;
+}
+
+.pilihan-role {
+  border: 1px solid var(--garis);
+  border-radius: 6px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pilihan-role legend {
+  padding: 0 6px;
+  font-size: 0.84rem;
+  color: var(--aksen);
+}
+
+.opsi-radio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.86rem;
+  cursor: pointer;
+}
+
+.catatan-bawah {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.86rem;
+  color: var(--redup);
+}
+
+.catatan-bawah a {
+  color: var(--aksen);
+  text-decoration: none;
+}
+
 /* footer */
 .kaki-web {
   border-top: 1px solid var(--garis);
@@ -507,7 +742,7 @@ main {
   font-size: 0.85rem;
 }
 
-/* tampilan responsif untuk hp */
+/* tampilan responsif hp & tablet */
 @media (max-width: 768px) {
   .tombol-menu {
     display: block;
@@ -533,5 +768,13 @@ main {
   .baris-jadwal {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .form-upload-game {
+    grid-template-columns: 1fr;
+  }
+
+  .input-cari {
+    width: 100%;
   }
 }

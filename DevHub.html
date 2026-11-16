@@ -13,24 +13,39 @@
       <a href="Index.html" class="logo">Indie<span>Arc</span></a>
       <button class="tombol-menu" id="btnMenu" aria-label="Buka Menu">&#9776;</button>
       <nav class="menu-nav" id="menuNav">
-        <a href="Index.html">Berita & Beranda</a>
+        <a href="Index.html">Berita</a>
         <a href="TokoGame.html">Toko Game</a>
-        <a href="Event.html">Event & Jam</a>
+        <a href="Event.html">Event &amp; Jam</a>
         <a href="PasarAset.html">Pasar Aset</a>
-        <a href="DevHub.html" class="aktif">Dev Hub</a>
+        <a href="DevHub.html" class="aktif" id="linkDevHub">Dev Hub</a>
         <a href="HistoryPembelianUser.html">History</a>
       </nav>
+      <div class="area-akun">
+        <button class="badge-pov" id="btnGantiPov" title="Klik untuk ganti POV">POV: User</button>
+        <a href="Login.html" class="tombol tombol-kecil tombol-sekunder" id="linkAuth">Login</a>
+      </div>
     </div>
   </header>
 
   <main class="wadah">
-    <section class="bagian">
-      <div class="judul-bagian">
-        <h1>Dashboard Developer (IndieStudio_ID)</h1>
-        <p>Pantau jumlah pemain aktif, total penjualan, dan aktivitas pembeli game buatanmu.</p>
+    <section class="kotak-info tengah-pesan" id="pesanBukanDev" style="display: none;">
+      <h2>Akses Khusus POV Developer</h2>
+      <p>Saat ini akun kamu berada di <strong>POV User (Gamer)</strong>. Fitur monitoring penjualan, analitik pemain, dan upload game hanya muncul pada mode Developer.</p>
+      <div class="grup-aksi tengah-tombol">
+        <button class="tombol tombol-utama" id="btnAktifkanDev">Beralih ke POV Developer</button>
+        <a href="Register.html" class="tombol tombol-sekunder">Daftar Akun Developer</a>
+      </div>
+    </section>
+
+    <section class="bagian" id="kontenDevHub">
+      <div class="baris-judul-history">
+        <div class="judul-bagian">
+          <h1>Dashboard Developer (<span id="namaStudioDev">IndieStudio_ID</span>)</h1>
+          <p>Pantau jumlah pemain aktif, total penjualan, dan unggah rilis game baru.</p>
+        </div>
+        <button class="tombol tombol-utama" id="btnTarikSaldo">Tarik Saldo Pendapatan</button>
       </div>
 
-      <!-- ringkasan statistik -->
       <div class="grid-statistik">
         <article class="kartu-stat">
           <span class="label-stat">Pemain Aktif Hari Ini</span>
@@ -42,28 +57,41 @@
         </article>
         <article class="kartu-stat">
           <span class="label-stat">Pendapatan Bersih</span>
-          <strong class="angka-stat teks-hijau">Rp 48.250.000</strong>
+          <strong class="angka-stat teks-hijau" id="saldoDev">Rp 48.250.000</strong>
         </article>
       </div>
 
-      <!-- tabel game buatan developer -->
+      <article class="kotak-info">
+        <h2 class="sub-judul-nol">Rilis Game / Demo Baru (Simulasi Static)</h2>
+        <p class="teks-redup">Tambahkan entri game baru untuk ditampilkan di daftar monitoring developer.</p>
+        <form class="form-upload-game" id="formPublishGame">
+          <input type="text" id="judulGameBaru" placeholder="Judul Game Baru" required>
+          <select id="jenisRilisBaru">
+            <option value="Full Game">Full Game</option>
+            <option value="Demo Gratis">Demo Gratis</option>
+          </select>
+          <input type="text" id="hargaGameBaru" placeholder="Harga (misal: Rp 45.000)" required>
+          <button type="submit" class="tombol tombol-utama">Publish Game</button>
+        </form>
+      </article>
+
       <h2 class="sub-judul">Daftar Game Buatan Anda</h2>
       <div class="tabel-wrap">
         <table class="tabel-data">
           <thead>
             <tr>
               <th>Judul Game</th>
-              <th>Status</th>
+              <th>Status (Klik ubah)</th>
               <th>Harga</th>
               <th>Pemain Aktif</th>
               <th>Total Pembeli / Unduhan</th>
               <th>Pendapatan</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="tabelGameDev">
             <tr>
               <td><strong>Nusantara Quest: Reborn</strong></td>
-              <td><span class="badge-aktif">Tayang</span></td>
+              <td><button class="badge-aktif tombol-status" onclick="ubahStatusGame(this)">Tayang</button></td>
               <td>Rp 50.000</td>
               <td>920 orang</td>
               <td>2.100 pembeli</td>
@@ -71,7 +99,7 @@
             </tr>
             <tr>
               <td><strong>Pixel Runner 2D</strong></td>
-              <td><span class="badge-aktif">Tayang</span></td>
+              <td><button class="badge-aktif tombol-status" onclick="ubahStatusGame(this)">Tayang</button></td>
               <td>Gratis</td>
               <td>500 orang</td>
               <td>1.750 unduhan</td>
@@ -81,8 +109,7 @@
         </table>
       </div>
 
-      <!-- tabel log pembeli terbaru -->
-      <h2 class="sub-judul">Aktivitas Pembeli & Pemain Terbaru</h2>
+      <h2 class="sub-judul">Aktivitas Pembeli &amp; Pemain Terbaru</h2>
       <div class="tabel-wrap">
         <table class="tabel-data">
           <thead>
@@ -120,7 +147,7 @@
 
   <footer class="kaki-web">
     <div class="wadah">
-      <p>&copy; 2026 IndieArc - Tugas Proyek Desain Web.</p>
+      <p>&copy; 2026 IndieArc - Global Indie Gaming &amp; Developer Hub.</p>
     </div>
   </footer>
 

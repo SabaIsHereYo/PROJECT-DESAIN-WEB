@@ -13,31 +13,36 @@
       <a href="Index.html" class="logo">Indie<span>Arc</span></a>
       <button class="tombol-menu" id="btnMenu" aria-label="Buka Menu">&#9776;</button>
       <nav class="menu-nav" id="menuNav">
-        <a href="Index.html" class="aktif">Berita & Beranda</a>
+        <a href="Index.html" class="aktif">Berita</a>
         <a href="TokoGame.html">Toko Game</a>
-        <a href="Event.html">Event & Jam</a>
+        <a href="Event.html">Event &amp; Jam</a>
         <a href="PasarAset.html">Pasar Aset</a>
-        <a href="DevHub.html">Dev Hub</a>
+        <a href="DevHub.html" id="linkDevHub">Dev Hub</a>
         <a href="HistoryPembelianUser.html">History</a>
       </nav>
+      <div class="area-akun">
+        <button class="badge-pov" id="btnGantiPov" title="Klik untuk ganti POV">POV: User</button>
+        <a href="Login.html" class="tombol tombol-kecil tombol-sekunder" id="linkAuth">Login</a>
+      </div>
     </div>
   </header>
 
   <main class="wadah">
-    <!-- sorotan berita utama -->
     <section class="hero-berita">
       <article class="isi-hero">
         <span class="label-kategori">Sorotan Developer Lokal</span>
         <h1>Perjalanan Solo Developer Menggarap "Hollow Realm" Selama 18 Bulan</h1>
         <p>Berawal dari prototipe kecil saat ikut Game Jam, game aksi-petualangan ini akhirnya tembus pasar global tanpa penerbit besar.</p>
         <div class="info-meta">
-          <time datetime="2026-10-20">20 Oktober 2026</time> &bull; Tim Redaksi IndieArc
+          <time datetime="2026-11-16">16 November 2026</time> &bull; Tim Redaksi IndieArc
         </div>
-        <button class="tombol tombol-utama" id="btnBukaBerita">Baca Artikel</button>
+        <div class="grup-aksi">
+          <button class="tombol tombol-utama" id="btnBukaBerita">Baca Artikel</button>
+          <button class="tombol tombol-sekunder" id="btnLikeBerita">&#9829; Suka (<span id="jumlahLike">42</span>)</button>
+        </div>
       </article>
     </section>
 
-    <!-- berita game luar dengan link resmi -->
     <section class="bagian">
       <div class="judul-bagian">
         <h2>Kabar Game Indie Global</h2>
@@ -53,7 +58,7 @@
             <p>Ekspansi baru dengan 40 level tambahan dan mode co-op lokal resmi diumumkan.</p>
             <div class="bawah-kartu">
               <span class="harga">Rp 165.000</span>
-              <a href="https://store.steampowered.com" target="_blank" rel="noopener" class="tombol tombol-sekunder">Cek di Steam</a>
+              <a href="https://store.steampowered.com" target="_blank" rel="noopener" class="tombol tombol-sekunder" onclick="alert('Mengarahkan ke halaman resmi Steam...')">Cek di Steam</a>
             </div>
           </div>
         </article>
@@ -66,7 +71,7 @@
             <p>Game roguelike eksperimental buatan dua mahasiswa asal Bandung yang viral di forum indie.</p>
             <div class="bawah-kartu">
               <span class="harga gratis">Gratis / Donasi</span>
-              <a href="https://itch.io" target="_blank" rel="noopener" class="tombol tombol-sekunder">Buka itch.io</a>
+              <a href="https://itch.io" target="_blank" rel="noopener" class="tombol tombol-sekunder" onclick="alert('Membuka situs resmi itch.io...')">Buka itch.io</a>
             </div>
           </div>
         </article>
@@ -79,21 +84,31 @@
             <p>Pembaruan mesin grafis baru untuk game balap open-source bebas mikrotransaksi.</p>
             <div class="bawah-kartu">
               <span class="harga gratis">Open Source</span>
-              <a href="https://supertuxkart.net" target="_blank" rel="noopener" class="tombol tombol-sekunder">Situs Resmi</a>
+              <a href="https://supertuxkart.net" target="_blank" rel="noopener" class="tombol tombol-sekunder" onclick="alert('Membuka situs resmi SuperTuxKart...')">Situs Resmi</a>
             </div>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- ringkasan ekosistem -->
-    <aside class="kotak-info">
-      <h3>Tentang Platform IndieArc</h3>
-      <p>IndieArc menghubungkan gamer dengan pengembang independen secara legal. Game luar diarahkan ke toko resminya, sementara game lokal dan aset kreatif bisa dibeli atau diunduh langsung di sini.</p>
-    </aside>
+    <section class="bagian kotak-info">
+      <h2>Diskusi Komunitas</h2>
+      <p class="teks-redup">Tulis tanggapanmu mengenai perkembangan game indie lokal.</p>
+      <form class="form-komentar" id="formKomentar">
+        <input type="text" id="inputKomentar" placeholder="Tulis komentar singkat di sini..." required>
+        <button type="submit" class="tombol tombol-utama">Kirim</button>
+      </form>
+      <div class="daftar-komentar" id="daftarKomentar">
+        <article class="item-komentar">
+          <strong>Rizky_Gamer:</strong> Ditunggu banget demo game lokal terbarunya bulan ini!
+        </article>
+        <article class="item-komentar">
+          <strong>StudioKecil_ID:</strong> Terima kasih IndieArc, aset CC0 di sini sangat membantu tim kami.
+        </article>
+      </div>
+    </section>
   </main>
 
-  <!-- modal baca berita -->
   <dialog class="modal-dialog" id="modalBerita">
     <article class="isi-modal">
       <header class="atas-modal">
@@ -107,7 +122,7 @@
 
   <footer class="kaki-web">
     <div class="wadah">
-      <p>&copy; 2026 IndieArc - Tugas Proyek Desain Web.</p>
+      <p>&copy; 2026 IndieArc - Global Indie Gaming &amp; Developer Hub.</p>
     </div>
   </footer>
 

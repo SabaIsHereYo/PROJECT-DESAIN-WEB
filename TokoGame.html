@@ -13,35 +13,44 @@
       <a href="Index.html" class="logo">Indie<span>Arc</span></a>
       <button class="tombol-menu" id="btnMenu" aria-label="Buka Menu">&#9776;</button>
       <nav class="menu-nav" id="menuNav">
-        <a href="Index.html">Berita & Beranda</a>
+        <a href="Index.html">Berita</a>
         <a href="TokoGame.html" class="aktif">Toko Game</a>
-        <a href="Event.html">Event & Jam</a>
+        <a href="Event.html">Event &amp; Jam</a>
         <a href="PasarAset.html">Pasar Aset</a>
-        <a href="DevHub.html">Dev Hub</a>
+        <a href="DevHub.html" id="linkDevHub">Dev Hub</a>
         <a href="HistoryPembelianUser.html">History</a>
       </nav>
+      <div class="area-akun">
+        <button class="badge-pov" id="btnGantiPov" title="Klik untuk ganti POV">POV: User</button>
+        <a href="Login.html" class="tombol tombol-kecil tombol-sekunder" id="linkAuth">Login</a>
+      </div>
     </div>
   </header>
 
   <main class="wadah">
     <section class="bagian">
       <div class="judul-bagian">
-        <h1>Toko Game Indie & Demo</h1>
-        <p>Dukung langsung kreator lokal dengan membeli versi penuh atau coba versi demo secara gratis.</p>
+        <h1>Toko Game Indie &amp; Demo</h1>
+        <p id="sapaanToko">Jelajahi game buatan kreator lokal atau coba versi demo secara gratis.</p>
       </div>
 
-      <!-- filter kategori -->
-      <div class="baris-filter" id="filterToko">
-        <button class="tombol-filter aktif" data-kategori="semua">Semua</button>
-        <button class="tombol-filter" data-kategori="berbayar">Full Game</button>
-        <button class="tombol-filter" data-kategori="demo">Demo Gratis</button>
+      <div class="kontrol-katalog">
+        <div class="baris-filter" id="filterToko">
+          <button class="tombol-filter aktif" data-kategori="semua">Semua</button>
+          <button class="tombol-filter" data-kategori="berbayar">Full Game</button>
+          <button class="tombol-filter" data-kategori="demo">Demo Gratis</button>
+        </div>
+        <input type="search" id="cariGame" class="input-cari" placeholder="Cari judul game...">
       </div>
 
       <div class="grid-kartu" id="daftarGame">
-        <article class="kartu item-filter" data-kategori="berbayar">
+        <article class="kartu item-filter" data-kategori="berbayar" data-judul="nusantara quest reborn">
           <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=600&q=80" alt="Nusantara Quest">
           <div class="isi-kartu">
-            <span class="tag-platform">RPG &bull; IndieStudio_ID</span>
+            <div class="atas-kartu">
+              <span class="tag-platform">RPG &bull; IndieStudio_ID</span>
+              <button class="tombol-wishlist" onclick="toggleWishlist(this, 'Nusantara Quest: Reborn')" title="Simpan ke Wishlist">&#9825;</button>
+            </div>
             <h3>Nusantara Quest: Reborn</h3>
             <p>Petualangan RPG bergaya piksel dengan latar cerita rakyat kepulauan.</p>
             <div class="bawah-kartu">
@@ -51,10 +60,13 @@
           </div>
         </article>
 
-        <article class="kartu item-filter" data-kategori="demo">
+        <article class="kartu item-filter" data-kategori="demo" data-judul="aetheria chapter 0">
           <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=600&q=80" alt="Aetheria Demo">
           <div class="isi-kartu">
-            <span class="tag-platform tag-demo">Versi Demo</span>
+            <div class="atas-kartu">
+              <span class="tag-platform tag-demo">Versi Demo</span>
+              <button class="tombol-wishlist" onclick="toggleWishlist(this, 'Aetheria: Chapter 0')" title="Simpan ke Wishlist">&#9825;</button>
+            </div>
             <h3>Aetheria: Chapter 0</h3>
             <p>Coba 30 menit pertama gameplay dan lawan boss pembuka sebelum rilis resmi.</p>
             <div class="bawah-kartu">
@@ -64,10 +76,13 @@
           </div>
         </article>
 
-        <article class="kartu item-filter" data-kategori="berbayar">
+        <article class="kartu item-filter" data-kategori="berbayar" data-judul="simulasi warung kopi malam">
           <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600&q=80" alt="Warung Kopi">
           <div class="isi-kartu">
-            <span class="tag-platform">Simulasi &bull; KopiDev</span>
+            <div class="atas-kartu">
+              <span class="tag-platform">Simulasi &bull; KopiDev</span>
+              <button class="tombol-wishlist" onclick="toggleWishlist(this, 'Simulasi Warung Kopi Malam')" title="Simpan ke Wishlist">&#9825;</button>
+            </div>
             <h3>Simulasi Warung Kopi Malam</h3>
             <p>Kelola kedai kopi kecil, racik minuman, dan dengarkan cerita pelanggan.</p>
             <div class="bawah-kartu">
@@ -77,10 +92,13 @@
           </div>
         </article>
 
-        <article class="kartu item-filter" data-kategori="demo">
+        <article class="kartu item-filter" data-kategori="demo" data-judul="jakarta midnight drift">
           <img src="https://images.unsplash.com/photo-1580234811497-9df7fd2f357e?w=600&q=80" alt="Neon Drift">
           <div class="isi-kartu">
-            <span class="tag-platform tag-demo">Versi Demo</span>
+            <div class="atas-kartu">
+              <span class="tag-platform tag-demo">Versi Demo</span>
+              <button class="tombol-wishlist" onclick="toggleWishlist(this, 'Jakarta Midnight Drift')" title="Simpan ke Wishlist">&#9825;</button>
+            </div>
             <h3>Jakarta Midnight Drift</h3>
             <p>Uji coba 2 lintasan balap malam dengan mobil modifikasi lokal.</p>
             <div class="bawah-kartu">
@@ -95,7 +113,7 @@
 
   <footer class="kaki-web">
     <div class="wadah">
-      <p>&copy; 2026 IndieArc - Tugas Proyek Desain Web.</p>
+      <p>&copy; 2026 IndieArc - Global Indie Gaming &amp; Developer Hub.</p>
     </div>
   </footer>
 

@@ -13,13 +13,17 @@
       <a href="Index.html" class="logo">Indie<span>Arc</span></a>
       <button class="tombol-menu" id="btnMenu" aria-label="Buka Menu">&#9776;</button>
       <nav class="menu-nav" id="menuNav">
-        <a href="Index.html">Berita & Beranda</a>
+        <a href="Index.html">Berita</a>
         <a href="TokoGame.html">Toko Game</a>
-        <a href="Event.html">Event & Jam</a>
+        <a href="Event.html">Event &amp; Jam</a>
         <a href="PasarAset.html" class="aktif">Pasar Aset</a>
-        <a href="DevHub.html">Dev Hub</a>
+        <a href="DevHub.html" id="linkDevHub">Dev Hub</a>
         <a href="HistoryPembelianUser.html">History</a>
       </nav>
+      <div class="area-akun">
+        <button class="badge-pov" id="btnGantiPov" title="Klik untuk ganti POV">POV: User</button>
+        <a href="Login.html" class="tombol tombol-kecil tombol-sekunder" id="linkAuth">Login</a>
+      </div>
     </div>
   </header>
 
@@ -30,7 +34,6 @@
         <p>Beli aset siap pakai buatan kreator atau unduh aset sumbangan gratis berlisensi CC0.</p>
       </div>
 
-      <!-- filter aset -->
       <div class="baris-filter" id="filterAset">
         <button class="tombol-filter aktif" data-kategori="semua">Semua Aset</button>
         <button class="tombol-filter" data-kategori="berbayar">Komersial (Berbayar)</button>
@@ -46,7 +49,10 @@
             <p>Berisi 45 objek gedung, jalan, dan lampu format FBX dan OBJ siap pakai.</p>
             <div class="bawah-kartu">
               <span class="harga">Rp 95.000</span>
-              <button class="tombol tombol-utama" onclick="beliItem('Paket Bangunan Kota Low-Poly', 'Aset 3D', 'Rp 95.000')">Beli Aset</button>
+              <div class="grup-tombol-kartu">
+                <button class="tombol tombol-sekunder" onclick="infoLisensi('Komersial', 'Boleh digunakan untuk proyek game komersial tanpa royalti, dilarang dijual ulang sebagai aset mentah.')">Lisensi</button>
+                <button class="tombol tombol-utama" onclick="beliItem('Paket Bangunan Kota Low-Poly', 'Aset 3D', 'Rp 95.000')">Beli</button>
+              </div>
             </div>
           </div>
         </article>
@@ -59,7 +65,10 @@
             <p>Sumbangan komunitas berisi efek lompat, koin, ledakan, dan menu format WAV.</p>
             <div class="bawah-kartu">
               <span class="harga gratis">Gratis</span>
-              <button class="tombol tombol-sekunder" onclick="unduhItem('60 Efek Suara Retro 8-Bit', 'Aset Audio CC0')">Unduh ZIP</button>
+              <div class="grup-tombol-kartu">
+                <button class="tombol tombol-sekunder" onclick="infoLisensi('CC0 Public Domain', 'Bebas digunakan untuk proyek pribadi maupun komersial tanpa wajib mencantumkan kredit.')">Lisensi</button>
+                <button class="tombol tombol-utama" onclick="unduhItem('60 Efek Suara Retro 8-Bit', 'Aset Audio CC0')">Unduh</button>
+              </div>
             </div>
           </div>
         </article>
@@ -72,7 +81,10 @@
             <p>Ikon inventori, bar darah, tombol, dan bingkai dialog resolusi tinggi (PNG/SVG).</p>
             <div class="bawah-kartu">
               <span class="harga">Rp 60.000</span>
-              <button class="tombol tombol-utama" onclick="beliItem('Antarmuka RPG Fantasi Gelap', 'Aset UI', 'Rp 60.000')">Beli Aset</button>
+              <div class="grup-tombol-kartu">
+                <button class="tombol tombol-sekunder" onclick="infoLisensi('Komersial', 'Lisensi penggunaan tak terbatas untuk game indie maupun studio komersial.')">Lisensi</button>
+                <button class="tombol tombol-utama" onclick="beliItem('Antarmuka RPG Fantasi Gelap', 'Aset UI', 'Rp 60.000')">Beli</button>
+              </div>
             </div>
           </div>
         </article>
@@ -81,11 +93,14 @@
           <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=600&q=80" alt="Tileset">
           <div class="isi-kartu">
             <span class="tag-platform tag-gratis">Lisensi CC0 &bull; @PixelNusa</span>
-            <h3>Tileset Hutan & Gua 16x16</h3>
+            <h3>Tileset Hutan &amp; Gua 16x16</h3>
             <p>Aset sumbangan terbuka untuk game platformer 2D lengkap dengan animasi karakter.</p>
             <div class="bawah-kartu">
               <span class="harga gratis">Gratis</span>
-              <button class="tombol tombol-sekunder" onclick="unduhItem('Tileset Hutan & Gua 16x16', 'Aset 2D CC0')">Unduh ZIP</button>
+              <div class="grup-tombol-kartu">
+                <button class="tombol tombol-sekunder" onclick="infoLisensi('CC0 Public Domain', 'Aset sumbangan terbuka untuk belajar maupun dirilis ke toko game.')">Lisensi</button>
+                <button class="tombol tombol-utama" onclick="unduhItem('Tileset Hutan & Gua 16x16', 'Aset 2D CC0')">Unduh</button>
+              </div>
             </div>
           </div>
         </article>
@@ -95,7 +110,7 @@
 
   <footer class="kaki-web">
     <div class="wadah">
-      <p>&copy; 2026 IndieArc - Tugas Proyek Desain Web.</p>
+      <p>&copy; 2026 IndieArc - Global Indie Gaming &amp; Developer Hub.</p>
     </div>
   </footer>
 

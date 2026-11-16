@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Akun - IndieArc</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+  <header class="kepala-web">
+    <div class="wadah baris-nav">
+      <a href="Index.html" class="logo">Indie<span>Arc</span></a>
+      <nav class="menu-nav">
+        <a href="Index.html">Kembali ke Beranda</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wadah wadah-auth">
+    <section class="kotak-auth">
+      <h1>Masuk ke IndieArc</h1>
+      <p class="teks-redup">Pilih peran (POV) untuk mencoba tampilan User atau Developer.</p>
+
+      <form id="formLogin" class="form-auth">
+        <div class="grup-input">
+          <label for="loginUsername">Username atau Email</label>
+          <input type="text" id="loginUsername" placeholder="contoh: Budi_Gamer atau IndieStudio_ID" required>
+        </div>
+
+        <div class="grup-input">
+          <label for="loginPassword">Kata Sandi</label>
+          <input type="password" id="loginPassword" placeholder="Masukkan kata sandi" required>
+        </div>
+
+        <fieldset class="pilihan-role">
+          <legend>Masuk Sebagai (POV)</legend>
+          <label class="opsi-radio">
+            <input type="radio" name="roleLogin" value="user" checked>
+            <span>User / Gamer (Beli game, aset &amp; ikut event)</span>
+          </label>
+          <label class="opsi-radio">
+            <input type="radio" name="roleLogin" value="developer">
+            <span>Developer (Kelola game &amp; lihat analitik)</span>
+          </label>
+        </fieldset>
+
+        <button type="submit" class="tombol tombol-utama tombol-penuh">Masuk Sekarang</button>
+      </form>
+
+      <p class="catatan-bawah">
+        Belum punya akun? <a href="Register.html">Daftar akun baru di sini</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="kaki-web">
+    <div class="wadah">
+      <p>&copy; 2026 IndieArc - Global Indie Gaming &amp; Developer Hub.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
