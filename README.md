@@ -59,4 +59,11 @@ IndieArc dirancang sebagai prototipe website berbasis HTML dan CSS yang menginte
 * 📱 **Layout Responsif:** Pengaturan tampilan fleksibel berbasis Grid & Flexbox untuk berbagai ukuran layar
 * 📑 **Integrasi 4 Halaman Utama:** Selesainya rancangan halaman Utama/Store, Event Hub, Pasar Aset, dan Dashboard Developer
 
+### **[v0.2] - Akun dan beberapa tambahan **
+* 📝 **Halaman Login dan Registrasi:** Menambahkan Fitur *Login dan Regristrasi* Akun
+* 🔍 **Bar Pencarian:** Menggunakan keyword berdasarkan Judul game (h3)
+* 🖱️ **Dev Hub & Upload Game:** Halaman DevHub yang hanya bisa di akses saat mode Developer dan memiliki fitur menambahkan dan mengatur Game
+* 🦶 **Footer:** Berisi navigasi, Komunitas dan Kontributor
+* 🐞 **Bugfixed:** Memperbaiki dan Merapihkan beberapa fitur dan halaman
+
 ---
