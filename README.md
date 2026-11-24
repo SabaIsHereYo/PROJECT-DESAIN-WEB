@@ -1,7 +1,5 @@
-<div align="center">
 # Kelompok Ngelag
 ## 🎮 IndieArc - Game Store & Community Hub Berbasis Open Source
-</div>
 
 ---
 
