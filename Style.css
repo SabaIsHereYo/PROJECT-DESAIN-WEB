@@ -42,7 +42,6 @@ main {
   font-size: 0.9rem;
 }
 
-/* navigasi atas */
 .kepala-web {
   background-color: #151922;
   border-bottom: 1px solid var(--garis);
@@ -138,7 +137,6 @@ main {
   cursor: pointer;
 }
 
-/* hero berita */
 .hero-berita {
   background: linear-gradient(to right, rgba(17, 20, 26, 0.95), rgba(17, 20, 26, 0.7)),
               url('https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1200&q=80') center/cover;
@@ -186,7 +184,6 @@ main {
   flex-wrap: wrap;
 }
 
-/* bagian & judul */
 .bagian {
   margin-bottom: 40px;
 }
@@ -216,7 +213,6 @@ main {
   margin-bottom: 4px;
 }
 
-/* grid kartu */
 .grid-kartu {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
@@ -316,7 +312,6 @@ main {
   color: var(--hijau);
 }
 
-/* tombol */
 .tombol {
   display: inline-block;
   padding: 8px 14px;
@@ -358,7 +353,6 @@ main {
   background-color: #313a4c;
 }
 
-/* filter & pencarian */
 .kontrol-katalog {
   display: flex;
   justify-content: space-between;
@@ -411,7 +405,6 @@ main {
   min-width: 230px;
 }
 
-/* komentar berita */
 .form-komentar {
   display: flex;
   gap: 8px;
@@ -441,7 +434,6 @@ main {
   font-size: 0.88rem;
 }
 
-/* event */
 .banner-event {
   background-color: var(--kartu);
   border: 1px solid var(--garis);
@@ -512,7 +504,6 @@ main {
   color: var(--redup);
 }
 
-/* dev hub & tabel */
 .grid-statistik {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -610,7 +601,6 @@ main {
   border: 1px solid rgba(245, 158, 11, 0.4);
 }
 
-/* kotak info & modal */
 .kotak-info {
   background-color: var(--kartu);
   border: 1px solid var(--garis);
@@ -669,7 +659,6 @@ main {
   margin-bottom: 10px;
 }
 
-/* halaman login & register */
 .wadah-auth {
   display: flex;
   justify-content: center;
@@ -775,7 +764,6 @@ main {
   text-decoration: none;
 }
 
-/* footer multi-kolom */
 .kaki-web {
   background-color: #151922;
   border-top: 1px solid var(--garis);
@@ -898,17 +886,38 @@ main {
   font-size: 0.84rem;
 }
 
-/* tampilan responsif hp */
 @media (max-width: 768px) {
+  .baris-nav {
+    padding: 10px 0;
+  }
+
+  .logo {
+    order: 1;
+    margin-right: auto;
+  }
+
+  .area-akun {
+    order: 2;
+  }
+
+  .badge-mode {
+    max-width: 125px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
   .tombol-menu {
     display: block;
+    order: 3;
   }
 
   .menu-nav {
     display: none;
+    order: 4;
     width: 100%;
     flex-direction: column;
-    padding: 12px 0;
+    padding: 12px 0 4px;
     border-top: 1px solid var(--garis);
   }
 

@@ -4,12 +4,12 @@ const AKUN_BAWAAN = [
   { username: 'Budi_Gamer', password: 'user123', role: 'user', label: 'User' },
   { username: 'admin', password: 'admin123', role: 'developer', label: 'Developer' }
 ];
-
+// ya buat gabunguin akun bawaan sama akun baru yg pernah dibuat di halaman register
 function ambilDaftarAkun() {
   const akunTersimpan = JSON.parse(localStorage.getItem('indiearc_accounts')) || [];
-  return AKUN_BAWAAN.concat(akunTersimpan);
+  return AKUN_BAWAAN.concat(akunTersimpan); 
 }
-
+// buat ngebaca login
 function ambilSesi() {
   const defaultSesi = {
     username: 'Tamu',
@@ -19,12 +19,12 @@ function ambilSesi() {
   };
   return JSON.parse(localStorage.getItem('indiearc_sesi')) || defaultSesi;
 }
-
+// buat nyimpen data login 
 function simpanSesi(sesiBaru) {
   localStorage.setItem('indiearc_sesi', JSON.stringify(sesiBaru));
 }
 
-// perbarui tampilan navbar dan halaman sesuai akun yang login
+// perbarui tampilan navbar dan halaman sesuai akun yang login sebagai apa gitu coy
 function perbaruiTampilanAkun() {
   const sesi = ambilSesi();
   const btnMode = document.getElementById('btnMode');
@@ -51,7 +51,7 @@ function perbaruiTampilanAkun() {
       btnMode.title = 'Akun User';
     }
   }
-
+// sesi cek jika akun sudah login
   if (linkAuth) {
     if (sesi.sudahLogin) {
       linkAuth.textContent = 'Logout';
@@ -67,7 +67,7 @@ function perbaruiTampilanAkun() {
       linkAuth.href = 'Login.html';
     }
   }
-
+//bagian halaman devhub (kalo g login fitur dikunci)
   if (linkDevHub) {
     if (!sesi.sudahLogin || sesi.role !== 'developer' || sesi.mode !== 'developer') {
       linkDevHub.classList.add('terkunci');
@@ -77,7 +77,7 @@ function perbaruiTampilanAkun() {
       linkDevHub.title = 'Dashboard Developer';
     }
   }
-
+ //bagian pojok atas kanan
   if (sapaanToko) {
     const info = sesi.sudahLogin
       ? 'Login sebagai ' + sesi.username
@@ -123,7 +123,7 @@ function perbaruiTampilanAkun() {
 
 perbaruiTampilanAkun();
 
-// tombol status akun di navbar
+// tombol status akun di navbar khusus buat akun developer aja ye coy
 const btnMode = document.getElementById('btnMode');
 if (btnMode) {
   btnMode.addEventListener('click', function () {
@@ -166,12 +166,13 @@ if (btnMenu && menuNav) {
 const btnBukaBerita = document.getElementById('btnBukaBerita');
 const btnTutupBerita = document.getElementById('btnTutupBerita');
 const modalBerita = document.getElementById('modalBerita');
-
+//buka modal
 if (btnBukaBerita && modalBerita) {
   btnBukaBerita.addEventListener('click', function () {
     modalBerita.showModal();
   });
 }
+//tutup modal
 if (btnTutupBerita && modalBerita) {
   btnTutupBerita.addEventListener('click', function () {
     modalBerita.close();
@@ -353,7 +354,7 @@ if (formPublishGame && tabelGameDev) {
     alert('Game "' + judul + '" berhasil ditambahkan.');
   });
 }
-
+//tombol ubah status game di dev hub
 function ubahStatusGame(tombol) {
   if (tombol.textContent === 'Tayang') {
     tombol.textContent = 'Draft';
